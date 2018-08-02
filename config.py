@@ -1,9 +1,13 @@
 DEBUG = True
+MAX_ITERS = 10
+INTERVAL_REFRESH_STATUS = 15
+GSD_LIMIT = 0.5
 
 COMMON_HEADERS = {"Content-Type": "application/json",}
 
 AUTH_PATH = "https://spaceknow.auth0.com"
 IMAG_PATH = "https://spaceknow-imagery.appspot.com"
+KRAK_PATH = "https://spaceknow-kraken.appspot.com"
 
 AUTH = {
     "METHOD": "POST",
@@ -44,4 +48,20 @@ SEARCH = {
 
     "HEADERS": COMMON_HEADERS,
 }
+
+KRAKEN = {
+    "METHOD": "POST",
+
+    "ENDPOINT": KRAK_PATH + "/kraken/release",
+
+    "PAYLOAD": {
+        "sceneId": "",
+        "extent": {
+            "type": "MultiPolygon",
+            "coordinates": [],
+        }
+    },
+    "HEADERS": COMMON_HEADERS,
+}
+
 
