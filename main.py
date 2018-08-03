@@ -1,6 +1,7 @@
 import json
 import requests
 import time
+from PIL import Image
 
 import config
 import exceptions
@@ -41,14 +42,17 @@ def get_scene_id(extent, auth_token):
     payload = {"pipelineId": response["pipelineId"]}
 
     iters = 0
-    try:
-        response = get_reponse(config.SEARCH, headers, payload, "/retrieve")
-    except exceptions.NotProcessedException:
-        if iters >= config.MAX_ITERS:
-            raise exceptions.FatalException("Pipeline processing timeout after {} s".format(
-                config.MAX_ITERS*config.INTERVAL_REFRESH_STATUS))
-        iters += 1
-        time.sleep(config.INTERVAL_REFRESH_STATUS)
+    retrieved = False
+    while not retrieved:
+        try:
+            response = get_reponse(config.SEARCH, headers, payload, "/retrieve")
+            retrieved = True
+        except exceptions.NotProcessedException:
+            if iters >= config.MAX_ITERS:
+                raise exceptions.FatalException("Pipeline processing timeout after {} s".format(
+                    config.MAX_ITERS*config.INTERVAL_REFRESH_STATUS))
+            iters += 1
+            time.sleep(config.INTERVAL_REFRESH_STATUS)
 
     if config.DEBUG:
         print(json.dumps(response, indent=2))
@@ -83,19 +87,34 @@ def get_tiles(extent, auth_token, scene_id, map_type):
     payload = {"pipelineId": response["pipelineId"]}
 
     iters = 0
-    try:
-        response = get_reponse(config.KRAKEN, headers, payload, "/" + map_type + "/geojson/retrieve")
-    except exceptions.NotProcessedException:
-        if iters >= config.MAX_ITERS:
-            raise exceptions.FatalException("Pipeline processing timeout after {} s".format(
-                config.MAX_ITERS*config.INTERVAL_REFRESH_STATUS))
-        iters += 1
-        time.sleep(config.INTERVAL_REFRESH_STATUS)
+    retrieved = False
+    while not retrieved:
+        try:
+            response = get_reponse(config.KRAKEN, headers, payload, "/" + map_type + "/geojson/retrieve")
+            retrieved = True
+        except exceptions.NotProcessedException:
+            if iters >= config.MAX_ITERS:
+                raise exceptions.FatalException("Pipeline processing timeout after {} s".format(
+                    config.MAX_ITERS*config.INTERVAL_REFRESH_STATUS))
+            iters += 1
+            time.sleep(config.INTERVAL_REFRESH_STATUS)
 
     if config.DEBUG:
         print(json.dumps(response, indent=2))
 
     return response
+
+
+def download_images(tiles, map_type):
+    base_url = config.KRAK_PATH + "/kraken/grid"
+    for tile in tiles["tiles"]:
+        url = "/".join((base_url, tiles["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]), map_type + ".png"))
+        png = requests.get(url)
+        image_path = "./img/" + "_".join((map_type, str(tile[0]), str(tile[1]), str(tile[2]))) + ".png"
+        with open(image_path, "wb") as f:
+            f.write(png.content)
+        image = Image.open(image_path)
+        image.show()
 
 
 def run():
@@ -132,9 +151,9 @@ def run():
 
     imag_tiles = get_tiles(extent, auth_token, scene_id, "imagery")
 
-    print(cars_tiles)
+    download_images(cars_tiles, "cars")
 
-    print(imag_tiles)
+    download_images(imag_tiles, "truecolor")
 
 if __name__ == '__main__':
     run()

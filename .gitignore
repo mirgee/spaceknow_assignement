@@ -1,0 +1,8 @@
+# IDE session, python bytecode, etc.
+__pycache__
+.idea
+
+# Notes
+docs
+json
+
