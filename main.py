@@ -8,7 +8,7 @@ import config
 import exceptions
 
 
-def get_reponse(conf, headers=None, payload=None, suffix=None):
+def get_response(conf, headers=None, payload=None, suffix=None):
     headers = conf["HEADERS"] if not headers else headers
     payload = conf["PAYLOAD"] if not payload else payload
     suffix = "" if not suffix else suffix
@@ -22,7 +22,7 @@ def get_reponse(conf, headers=None, payload=None, suffix=None):
 
         if config.DEBUG:
             print(response.request.body)
-        raise requests.RequestException("{} {} {} \n {}".format(conf["METHOD"], endpoint, response.status_code,
+        raise requests.RequestException("{} {} {} \n{}".format(conf["METHOD"], endpoint, response.status_code,
                                                                 json.dumps(response.json(), indent=2)))
 
     return response.json()
@@ -35,10 +35,10 @@ def get_scene_id(extent, auth_token):
     headers = config.SEARCH["HEADERS"].copy()
     headers["Authorization"] = "Bearer " + auth_token
 
-    response = get_reponse(config.SEARCH, headers, payload, "/initiate")
+    response = get_response(config.SEARCH, headers, payload, "/initiate")
 
     if "pipelineId" not in response.keys():
-        raise exceptions.InitiateException("Failed to initiate pipeline - no pipelineId in response body: {}".format(
+        raise exceptions.InitiateException("Failed to initiate pipeline - no pipelineId in response body: \n{}".format(
             json.dumps(response, indent=2)))
     payload = {"pipelineId": response["pipelineId"]}
 
@@ -46,7 +46,7 @@ def get_scene_id(extent, auth_token):
     retrieved = False
     while not retrieved:
         try:
-            response = get_reponse(config.SEARCH, headers, payload, "/retrieve")
+            response = get_response(config.SEARCH, headers, payload, "/retrieve")
             retrieved = True
         except exceptions.NotProcessedException:
             if iters >= config.MAX_ITERS:
@@ -79,10 +79,10 @@ def get_tiles(extent, auth_token, scene_id, map_type):
     headers = config.KRAKEN["HEADERS"].copy()
     headers["Authorization"] = "Bearer " + auth_token
 
-    response = get_reponse(config.KRAKEN, headers, payload, "/" + map_type + "/geojson/initiate")
+    response = get_response(config.KRAKEN, headers, payload, "/" + map_type + "/geojson/initiate")
 
     if "pipelineId" not in response.keys():
-        raise exceptions.InitiateException("Failed to initiate pipeline - no pipelineId in response body: {}".format(
+        raise exceptions.InitiateException("Failed to initiate pipeline - no pipelineId in response body: \n{}".format(
             json.dumps(response, indent=2)))
 
     payload = {"pipelineId": response["pipelineId"]}
@@ -91,7 +91,7 @@ def get_tiles(extent, auth_token, scene_id, map_type):
     retrieved = False
     while not retrieved:
         try:
-            response = get_reponse(config.KRAKEN, headers, payload, "/" + map_type + "/geojson/retrieve")
+            response = get_response(config.KRAKEN, headers, payload, "/" + map_type + "/geojson/retrieve")
             retrieved = True
         except exceptions.NotProcessedException:
             if iters >= config.MAX_ITERS:
@@ -112,7 +112,8 @@ def download_images(tiles, map_type):
         url = "/".join((base_url, tiles["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]), map_type + ".png"))
         png = requests.get(url)
         if png.status_code != 200:
-            raise requests.RequestException("Failed to download image: {} {}".format(png.status_code, png.text))
+            raise requests.RequestException("Failed to download image: \n{} \n{}".format(
+                png.status_code, json.dumps(png, indent=2)))
         image_path = "./img/" + "_".join((map_type, str(tile[0]), str(tile[1]), str(tile[2]))) + ".png"
         with open(image_path, "wb") as f:
             f.write(png.content)
@@ -142,6 +143,28 @@ def blend_images(path, map_type_fg, map_type_bg):
                 os.remove(file_path)
 
 
+def count_detections(tiles, map_type):
+    base_url = config.KRAK_PATH + "/kraken/grid"
+    detections = 0
+    for tile in tiles["tiles"]:
+        url = "/".join((base_url, tiles["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]), "detections.geojson"))
+        gjson = requests.get(url)
+        if gjson.status_code != 200:
+            raise requests.RequestException("Failed to get {} detections: \n{} \n{}".format(
+                map_type, gjson.status_code, json.dumps(gjson, indent=2)))
+
+        gjson = gjson.json()
+        if "features" not in gjson.keys():
+            raise exceptions.FieldNotFoundException("Got invalid {} detections.geojson file - "
+                                                    "missing features field: \n{}".format(map_type,
+                                                                                          json.dumps(gjson, indent=2)))
+        for feature in gjson["features"]:
+            if feature["properties"]["class"] == map_type:
+                detections += feature["properties"]["count"]
+
+    return detections
+
+
 def run():
     extent = [
         [
@@ -166,7 +189,7 @@ def run():
         ],
     ]
 
-    auth_response = get_reponse(config.AUTH)
+    auth_response = get_response(config.AUTH)
 
     auth_token = auth_response["id_token"]
 
@@ -182,11 +205,10 @@ def run():
 
     blend_images("./img", "cars", "truecolor")
 
+    detections = count_detections(cars_tiles, "cars")
+
+    print("Number of {} detections in selected area: {}".format("car", detections))
+
 if __name__ == '__main__':
     run()
-
-
-
-
-
 
