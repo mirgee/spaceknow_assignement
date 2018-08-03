@@ -1,3 +1,4 @@
+import os
 import json
 import requests
 import time
@@ -110,11 +111,35 @@ def download_images(tiles, map_type):
     for tile in tiles["tiles"]:
         url = "/".join((base_url, tiles["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]), map_type + ".png"))
         png = requests.get(url)
+        if png.status_code != 200:
+            raise requests.RequestException("Failed to download image: {} {}".format(png.status_code, png.text))
         image_path = "./img/" + "_".join((map_type, str(tile[0]), str(tile[1]), str(tile[2]))) + ".png"
         with open(image_path, "wb") as f:
             f.write(png.content)
-        image = Image.open(image_path)
-        image.show()
+
+
+def blend_images(path, map_type_fg, map_type_bg):
+    fg_files = set(f for f in os.listdir(path) if f.startswith(map_type_fg))
+    bg_files = set(f for f in os.listdir(path) if f.startswith(map_type_bg))
+
+    for fg_file in fg_files:
+        for bg_file in bg_files:
+            fg_coords = "_".join(fg_file.split("_")[1:])
+            bg_coords = "_".join(bg_file.split("_")[1:])
+            if fg_coords == bg_coords:
+                fg_path = os.path.join(path, fg_file)
+                bg_path = os.path.join(path, bg_file)
+                fg = Image.open(fg_path)
+                bg = Image.open(bg_path)
+                bg.paste(fg, (0, 0), fg)
+                bg.save(os.path.join(path, "blend_" + fg_coords))
+                bg.show()
+
+    if not config.DEBUG:
+        for file in set.union(fg_files, bg_files):
+            file_path = os.path.join(path, file)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
 
 
 def run():
@@ -154,6 +179,8 @@ def run():
     download_images(cars_tiles, "cars")
 
     download_images(imag_tiles, "truecolor")
+
+    blend_images("./img", "cars", "truecolor")
 
 if __name__ == '__main__':
     run()
