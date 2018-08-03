@@ -8,6 +8,23 @@ import config
 import exceptions
 
 
+def read_extent(input_file):
+    if not os.path.isfile(input_file):
+        raise exceptions.FatalException("Input file {} not found".format(input_file))
+    with open(input_file, "rb") as f:
+        gjson = json.load(f)
+        gjson_valid = \
+            "extent" in gjson.keys() and \
+            "geometries" in gjson["extent"].keys() and \
+            len(gjson["extent"]["geometries"]) > 0 and \
+            "coordinates" in gjson["extent"]["geometries"][0].keys()
+
+        if not gjson_valid:
+            raise exceptions.FieldNotFoundException("Unable to read extent coordinates from the input file "
+                                                    "- expected path /extent/geometries[0]/coordinates not found")
+        return gjson["extent"]["geometries"][0]["coordinates"]
+
+
 def get_response(conf, headers=None, payload=None, suffix=None):
     headers = conf["HEADERS"] if not headers else headers
     payload = conf["PAYLOAD"] if not payload else payload
@@ -23,14 +40,14 @@ def get_response(conf, headers=None, payload=None, suffix=None):
         if config.DEBUG:
             print(response.request.body)
         raise requests.RequestException("{} {} {} \n{}".format(conf["METHOD"], endpoint, response.status_code,
-                                                                json.dumps(response.json(), indent=2)))
+                                        json.dumps(response.json(), indent=2)))
 
     return response.json()
 
 
 def get_scene_id(extent, auth_token):
     payload = config.SEARCH["PAYLOAD"].copy()
-    payload["extent"]["geometries"][0]["coordinates"].append(extent)
+    payload["extent"]["geometries"][0]["coordinates"] = extent
 
     headers = config.SEARCH["HEADERS"].copy()
     headers["Authorization"] = "Bearer " + auth_token
@@ -73,7 +90,7 @@ def get_scene_id(extent, auth_token):
 
 def get_tiles(extent, auth_token, scene_id, map_type):
     payload = config.KRAKEN["PAYLOAD"].copy()
-    payload["extent"]["coordinates"] = [[extent]]
+    payload["extent"]["coordinates"] = [extent]
     payload['sceneId'] = scene_id
 
     headers = config.KRAKEN["HEADERS"].copy()
@@ -165,29 +182,9 @@ def count_detections(tiles, map_type):
     return detections
 
 
-def run():
-    extent = [
-        [
-            153.104694,
-            -27.391124
-        ],
-        [
-            153.103645,
-            -27.392561
-        ],
-        [
-            153.105356,
-            -27.393437
-        ],
-        [
-            153.106303,
-            -27.391922
-        ],
-        [
-            153.104694,
-            -27.391124
-        ],
-    ]
+def run(map_type, input_file):
+
+    extent = read_extent(input_file)
 
     auth_response = get_response(config.AUTH)
 
@@ -195,20 +192,20 @@ def run():
 
     scene_id = get_scene_id(extent, auth_token)
 
-    cars_tiles = get_tiles(extent, auth_token, scene_id, "cars")
+    map_tiles = get_tiles(extent, auth_token, scene_id, map_type)
 
     imag_tiles = get_tiles(extent, auth_token, scene_id, "imagery")
 
-    download_images(cars_tiles, "cars")
+    download_images(map_tiles, "cars")
 
     download_images(imag_tiles, "truecolor")
 
     blend_images("./img", "cars", "truecolor")
 
-    detections = count_detections(cars_tiles, "cars")
+    detections = count_detections(map_tiles, map_type)
 
-    print("Number of {} detections in selected area: {}".format("car", detections))
+    print("Number of detections of class \'{}\'in selected area: {}".format(map_type, detections))
 
 if __name__ == '__main__':
-    run()
+    run("cars", "./json/input.geojson")
 

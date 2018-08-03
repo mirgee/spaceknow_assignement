@@ -2,11 +2,11 @@ class InitiateException(Exception):
     pass
 
 
-class FieldNotFoundException(Exception):
+class NotProcessedException(Exception):
     pass
 
 
-class NotProcessedException(Exception):
+class FieldNotFoundException(Exception):
     pass
 
 
