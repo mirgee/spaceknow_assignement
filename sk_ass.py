@@ -69,7 +69,7 @@ def get_scenes(extent, auth_token):
 
         if "pipelineId" not in response.keys():
             raise exceptions.InitiateException("Failed to initiate pipeline - no pipelineId in response body: \n{}".format(
-                json.dumps(response, indent=2)))
+                json.dumps(response.json(), indent=2)))
 
         pipeline_id = response["pipelineId"]
 
@@ -101,6 +101,9 @@ def get_scenes(extent, auth_token):
         cursor = response["cursor"]
         init_payload["cursor"] = cursor
 
+        if len(scene_ids) > config.SCENES_LIMIT:
+            break
+
     return scene_ids
 
 
@@ -118,7 +121,7 @@ def collect_tiles(extent, auth_token, scene_id, map_type):
 
     if "pipelineId" not in response.keys():
         raise exceptions.InitiateException("Failed to initiate pipeline - no pipelineId in response body: \n{}".format(
-            json.dumps(response, indent=2)))
+            json.dumps(response.json(), indent=2)))
 
     payload = {"pipelineId": response["pipelineId"]}
 
@@ -133,10 +136,8 @@ def collect_tiles(extent, auth_token, scene_id, map_type):
                 raise exceptions.FatalException("Pipeline processing timeout after {} s".format(
                     config.MAX_ITERS*config.INTERVAL_REFRESH_STATUS))
             iters += 1
+            print("Pipeline not done processing yet... Trying again {}/{}".format(iters, config.MAX_ITERS))
             time.sleep(config.INTERVAL_REFRESH_STATUS)
-
-    if config.DEBUG:
-        print(json.dumps(response, indent=2))
 
     return response
 
@@ -145,15 +146,16 @@ def download_images(tiles, map_type):
     print("Downloading images...")
 
     base_url = config.KRAK_PATH + "/kraken/grid"
-    for tile in tiles["tiles"]:
-        url = "/".join((base_url, tiles["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]), map_type + ".png"))
-        png = requests.get(url)
-        if png.status_code != 200:
-            raise requests.RequestException("Failed to download image: \n{} \n{}".format(
-                png.status_code, json.dumps(png, indent=2)))
-        image_path = "./img/" + "_".join((map_type, str(tile[0]), str(tile[1]), str(tile[2]))) + ".png"
-        with open(image_path, "wb") as f:
-            f.write(png.content)
+    for item in tiles:
+        for tile in item["tiles"]:
+            url = "/".join((base_url, item["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]), map_type + ".png"))
+            png = requests.get(url)
+            if png.status_code != 200:
+                raise requests.RequestException("Failed to download image: \n{} \n{}".format(
+                    png.status_code, json.dumps(png.json(), indent=2)))
+            image_path = "./img/" + "_".join((map_type, str(tile[0]), str(tile[1]), str(tile[2]))) + ".png"
+            with open(image_path, "wb") as f:
+                f.write(png.content)
 
 
 def blend_images(path, map_type_fg, map_type_bg):
@@ -174,19 +176,16 @@ def blend_images(path, map_type_fg, map_type_bg):
                 bg = Image.open(bg_path)
                 bg.paste(fg, (0, 0), fg)
                 bg.save(os.path.join(path, "blend_" + fg_coords))
-                bg.show()
+                # bg.show()
                 num_blended += 1
 
     if num_blended < len(fg_files):
         print("Warning: {} tiles have not been matched!".format(fg_files-num_blended))
 
-    print("Images can be found in ./img/")
-
-    if not config.DEBUG:
-        for file in set.union(fg_files, bg_files):
-            file_path = os.path.join(path, file)
-            if os.path.isfile(file_path):
-                os.remove(file_path)
+    for file in set.union(fg_files, bg_files):
+        file_path = os.path.join(path, file)
+        if os.path.isfile(file_path):
+            os.remove(file_path)
 
 
 def count_detections(tiles, map_type):
@@ -194,27 +193,28 @@ def count_detections(tiles, map_type):
 
     base_url = config.KRAK_PATH + "/kraken/grid"
     detections = 0
-    for tile in tiles["tiles"]:
-        url = "/".join((base_url, tiles["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]), "detections.geojson"))
-        gjson = requests.get(url)
-        if gjson.status_code != 200:
-            raise requests.RequestException("Failed to get {} detections: \n{} \n{}".format(
-                map_type, gjson.status_code, json.dumps(gjson, indent=2)))
+    for item in tiles:
+        for tile in item["tiles"]:
+            url = "/".join((base_url, item["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]), "detections.geojson"))
+            gjson = requests.get(url)
+            if gjson.status_code != 200:
+                raise requests.RequestException("Failed to get {} detections: \n{} \n{}".format(
+                    map_type, gjson.status_code, json.dumps(gjson.json(), indent=2)))
 
-        if config.DEBUG:
-            gjson_path = "./json/temporary/" + "_".join((map_type, str(tile[0]), str(tile[1]), str(tile[2]))) + ".gjson"
-            with open(gjson_path, "w") as f:
-                json.dump(gjson.content, f, indent=2)
+            gjson = gjson.json()
 
-        gjson = gjson.json()
+            if config.DEBUG:
+                gjson_path = "./json/temporary/" + "_".join((map_type, str(tile[0]), str(tile[1]), str(tile[2]))) + ".gjson"
+                with open(gjson_path, "w") as f:
+                    f.write(json.dumps(gjson, indent=2))
 
-        if "features" not in gjson.keys():
-            raise exceptions.FieldNotFoundException("Got invalid {} detections.geojson file - "
-                                                    "missing features field: \n{}".format(map_type,
-                                                                                          json.dumps(gjson, indent=2)))
-        for feature in gjson["features"]:
-            if feature["properties"]["class"] == map_type:
-                detections += feature["properties"]["count"]
+            if "features" not in gjson.keys():
+                raise exceptions.FieldNotFoundException("Got invalid {} detections.geojson file - "
+                                                        "missing features field: \n{}".format(map_type,
+                                                                                              json.dumps(gjson, indent=2)))
+            for feature in gjson["features"]:
+                if feature["properties"]["class"] == map_type:
+                    detections += feature["properties"]["count"]
 
     return detections
 
@@ -229,9 +229,18 @@ def run(map_type, input_file):
 
     scene_ids = get_scenes(extent, auth_token)
 
-    map_tiles = collect_tiles(extent, auth_token, scene_ids, map_type)
+    if len(scene_ids) > 0:
+        print("Number of eligible scenes found: {}".format(len(scene_ids)))
+    else:
+        print("No eligible scenes found.")
+        return
 
-    imag_tiles = collect_tiles(extent, auth_token, scene_ids, "imagery")
+    map_tiles, imag_tiles = [], []
+
+    for scene_id in scene_ids:
+        map_tiles.append(collect_tiles(extent, auth_token, scene_id, map_type))
+
+        imag_tiles.append(collect_tiles(extent, auth_token, scene_id, "imagery"))
 
     download_images(map_tiles, "cars")
 
@@ -239,31 +248,44 @@ def run(map_type, input_file):
 
     blend_images("./img", "cars", "truecolor")
 
+    print("Images can be found in ./img/")
+
     detections = count_detections(map_tiles, map_type)
 
-    print("Number of detections of class \'{}\'in selected area: {}".format(map_type, detections))
+    print("Number of detections of class \'{}\' in selected area in the interval from {} to {}:\n{}"
+          .format(map_type, config.SEARCH['PAYLOAD']['startDatetime'], config.SEARCH['PAYLOAD']['endDatetime'],
+                  detections))
 
 if __name__ == '__main__':
     avail_input_files = [
-        "./json/inputs/input.geojson",
-        "./json/inputs/input_1.geojson",
+        "./json/inputs/brisbane_airport_staff_parking_lot.geojson",
+    ]
+
+    supported_map_types = [
+        "cars",
     ]
 
     parser = argparse.ArgumentParser("sk_ass",
                                      description="Detect, count and display selected features in a geographical area.")
 
     parser.add_argument("-f", dest="input_file", default=avail_input_files[0], type=str,
-                        help="input geojson specifying desired extent on path /extent/geometries[0]/coordinates "
+                        help="input geojson specifying desired extent on path /extent/geometries[0]/coordinates"
                              "(default: \'{}\')".format(avail_input_files[0]))
 
-    parser.add_argument("-m", dest="map_type", default="cars", type=str,
-                        help="type of feature to be detected (default: cars)")
+    parser.add_argument("-m", dest="map_type", default=supported_map_types[0], type=str, choices=supported_map_types,
+                        help="type of feature to be detected (default: {})".format(supported_map_types[0]))
 
-    parser.add_argument("-d", action="store_true", dest="debug",
-                        help="turns debugging mode on - debugging messages and received jsons are printed out")
+    parser.add_argument("-g", action="store_true", dest="debug",
+                        help="turns debugging mode on - debugging messages and traffic are printed out"
+                             " (default: off")
+
+    parser.add_argument("-d", default=config.DAYS_BACK, dest="days_back",
+                        help="age of the oldest analyzed imagery in days (default: {})".format(config.DAYS_BACK))
 
     args = parser.parse_args()
 
     config.DEBUG = args.debug
+    config.DAYS_BACK = args.days_back
+
     run(args.map_type, args.input_file)
 

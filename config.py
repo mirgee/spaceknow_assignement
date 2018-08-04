@@ -1,9 +1,11 @@
 import datetime
 
 DEBUG = False
-MAX_ITERS = 10
-INTERVAL_REFRESH_STATUS = 15
+MAX_ITERS = 40
+INTERVAL_REFRESH_STATUS = 20
 GSD_LIMIT = 0.5
+SCENES_LIMIT = 25
+DAYS_BACK = 2*365
 
 COMMON_HEADERS = {"Content-Type": "application/json",}
 
@@ -37,7 +39,7 @@ SEARCH = {
     "PAYLOAD": {
         "provider": "gbdx",
         "dataset": "idaho-pansharpened",
-        "startDatetime": "2016-01-01 00:00:00",
+        "startDatetime": (datetime.datetime.today() - datetime.timedelta(days=DAYS_BACK)).strftime("%Y-%m-%d %H:%M:%S"),
         "endDatetime": datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S"),
         "extent": {
             "type": "GeometryCollection",
