@@ -15,10 +15,8 @@ def read_extent(input_file):
     Validates and reads the extent coordinates from `input_file`. The input file must contain the path
     `/geometries[0]/coordinates`.
 
-    :param input_file: Valid input file path.
-    :type: str
-    :return: Extent coordinates in form `[[[,], [,], ... , [,]]]`.
-    :rtype: list
+    :param str input_file: Valid input file path.
+    :return list: Extent coordinates in form `[[[,], [,], ... , [,]]]`.
 
     :raises exceptions.FatalExceptions: Raised if file not found.
     :raises exceptions.FieldNotFoundExceptions: Raised if unable to process the file.
@@ -32,7 +30,7 @@ def read_extent(input_file):
         gjson = json.load(f)
         gjson_valid = \
             "geometries" in gjson.keys() and \
-            len(gjson["extent"]["geometries"]) > 0 and \
+            len(gjson["geometries"]) > 0 and \
             "coordinates" in gjson["geometries"][0].keys()
 
         if not gjson_valid:
@@ -46,17 +44,12 @@ def get_response(conf, headers=None, payload=None, suffix=None):
     Generic method used to communicate with an API endpoint. Configuration for the request is defined in `conf` and
     can be modified by the optional arguments. If debug mode is on, it prints both request and response body.
 
-    :param conf: A dict description of the API endpoint. It must contain the following keys: `"HEADERS"`, `"PAYLOAD"`,
+    :param dict conf: A dict description of the API endpoint. It must contain the following keys: `"HEADERS"`, `"PAYLOAD"`,
     `"METHOD"`, `"ENDPOINT"`.
-    :type: dict
-    :param headers: Optional parameter allowing to define custom header.
-    :type: str
-    :param payload: Optional parameter allowing to define custom payload.
-    :type: dict
-    :param suffix: Optional parameter allowing to append a suffix at the end of the header defined in `conf`.
-    :type: str
-    :return: API response in JSON format.
-    :rtype: str
+    :param str headers: Optional parameter allowing to define custom header.
+    :param dict payload: Optional parameter allowing to define custom payload.
+    :param str suffix: Optional parameter allowing to append a suffix at the end of the header defined in `conf`.
+    :return str: API response in JSON format.
 
     :raises exceptions.NotProcessedException: Raised if the endpoint is not ready with response yet, but is still
     processing. Should be caught by the caller if this is expected.
@@ -92,12 +85,9 @@ def get_scenes(extent, auth_token):
     Returns a list of `sceneId`s of all scenes with no cloud coverage and GSD under limit specified in the
     configuration file.
 
-    :param extent: Extent coordinates in form `[[[,], [,], ... , [,]]]`.
-    :type: list
-    :param auth_token: JWT authorization token.
-    :type: str
-    :return: List of `sceneId` of eligible scenes.
-    :rtype: list
+    :param list extent: Extent coordinates in form `[[[,], [,], ... , [,]]]`.
+    :param str auth_token: JWT authorization token.
+    :return list: List of `sceneId` of eligible scenes.
 
     :raises exceptions.InitiateException: Raised if pipeline initialization fails.
     :raises exceptions.FatalException: Raised if pipeline processing times out.
@@ -160,16 +150,11 @@ def collect_tiles(extent, auth_token, scene_id, map_type):
     """
     Collects Kraken tiles for a scene given by `scene_id` and map type given by `map_type`.
 
-    :param extent: Extent coordinates in form `[[[,], [,], ... , [,]]]`.
-    :type: list
-    :param auth_token: JWT authorization token.
-    :type: str
-    :param scene_id: Hash identifying the scene to get tiles for.
-    :type: str
-    :param map_type: Type of the desired map, e.g. 'cars', 'aircraft', 'cows', etc.
-    :type: str
-    :return: Response object containing a list of items with `mapId` and `tiles` fields.
-    :rtype: requests.Response
+    :param list extent: Extent coordinates in form `[[[,], [,], ... , [,]]]`.
+    :param str auth_token: JWT authorization token.
+    :param str scene_id: Hash identifying the scene to get tiles for.
+    :param str map_type: Type of the desired map, e.g. 'cars', 'aircraft', 'cows', etc.
+    :return requests.Response: Response object containing a list of items with `mapId` and `tiles` fields.
 
     :raises exceptions.InitiateException: Raised if pipeline initialization fails.
     :raises exceptions.FatalException: Raised if pipeline processing times out.
@@ -213,10 +198,9 @@ def download_images(tiles, map_type):
     """
     Downloads images corresponding to collected tiles in PNG format and writes them to `./img/`.
 
-    :param tiles: Response object containing a list of items with `mapId` and `tiles` fields; response of Kraken API.
-    :rtype requests.Response
-    :param map_type: Type of the desired map, e.g. 'cars', 'aircraft', 'cows', etc.
-    :type: str
+    :param requests.Response tiles: Response object containing a list of items with `mapId` and `tiles` fields;
+    response of Kraken API.
+    :param str map_type: Type of the desired map, e.g. 'cars', 'aircraft', 'cows', etc.
 
     :raises requests.RequestException: Raised if image download fails.
     """
@@ -224,14 +208,14 @@ def download_images(tiles, map_type):
     print("Downloading images...")
 
     base_url = config.KRAK_PATH + "/kraken/grid"
-    for item in tiles:
+    for i, item in enumerate(tiles):
         for tile in item["tiles"]:
             url = "/".join((base_url, item["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]), map_type + ".png"))
             png = requests.get(url)
             if png.status_code != 200:
                 raise requests.RequestException("Failed to download image: \n{} \n{}".format(
                     png.status_code, json.dumps(png.json(), indent=2)))
-            image_path = "./img/" + "_".join((map_type, str(tile[0]), str(tile[1]), str(tile[2]))) + ".png"
+            image_path = "./img/" + "_".join((map_type, str(i), str(tile[0]), str(tile[1]), str(tile[2]))) + ".png"
             with open(image_path, "wb") as f:
                 f.write(png.content)
 
@@ -241,12 +225,11 @@ def blend_images(path, map_type_fg, map_type_bg):
     Maps background and foreground images of the same size in `path` into pairs based on their (identifying uniquely
     map type and coordinates), lays them over each other, and removes the original images.
 
-    :param path: Path to search images in.
-    :type: str
-    :param map_type_fg: Map type of the foreground image.
-    :param: str
-    :param map_type_bg: Map type of the background image.
-    :param: str
+    File names are matched like this: `type1_id1.png` <-> `type2_id1.png`, type1_id2.png` <-> `type2_id2.png`, etc.
+
+    :param str path: Path to search images in.
+    :param str map_type_fg: Map type of the foreground image.
+    :param str map_type_bg: Map type of the background image.
     """
 
     print("Blending images...")
@@ -257,20 +240,20 @@ def blend_images(path, map_type_fg, map_type_bg):
     num_blended = 0
     for fg_file in fg_files:
         for bg_file in bg_files:
-            fg_coords = "_".join(fg_file.split("_")[1:])
-            bg_coords = "_".join(bg_file.split("_")[1:])
-            if fg_coords == bg_coords:
+            fg_id = "_".join(fg_file.split("_")[1:])
+            bg_id = "_".join(bg_file.split("_")[1:])
+            if fg_id == bg_id:
                 fg_path = os.path.join(path, fg_file)
                 bg_path = os.path.join(path, bg_file)
                 fg = Image.open(fg_path)
                 bg = Image.open(bg_path)
                 bg.paste(fg, (0, 0), fg)
-                bg.save(os.path.join(path, "blend_" + fg_coords))
+                bg.save(os.path.join(path, "blend_" + fg_id))
                 # bg.show()
                 num_blended += 1
 
     if num_blended < len(fg_files):
-        print("Warning: {} tiles have not been matched!".format(fg_files-num_blended))
+        print("Warning: {} tiles have not been matched!".format(len(fg_files)-num_blended))
 
     for file in set.union(fg_files, bg_files):
         file_path = os.path.join(path, file)
@@ -282,11 +265,9 @@ def count_detections(tiles, map_type):
     """
     Counts detections of class `map_type` in `tiles`.
 
-    :param tiles: Response object containing a list of items with `mapId` and `tiles` fields; response of Kraken API.
-    :rtype requests.Response
-    :param map_type: Class name of the detected feature (corresponds to map type).
-    :return: Number of detections in `tiles`.
-    :rtype: int
+    :param requests.Response tiles: Response object containing a list of items with `mapId` and `tiles` fields; response of Kraken API.
+    :param str map_type: Class name of the detected feature (corresponds to map type).
+    :return int: Number of detections in `tiles`.
 
     :raises requests.RequestException: Raised if the communication with the endpoint is unsuccessful.
     :raises exceptions.FieldNotFoundException: Raised if unable to parse the received geojson.
@@ -296,7 +277,7 @@ def count_detections(tiles, map_type):
 
     base_url = config.KRAK_PATH + "/kraken/grid"
     detections = 0
-    for item in tiles:
+    for i, item in enumerate(tiles):
         for tile in item["tiles"]:
             url = "/".join((base_url, item["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]),
                             "detections.geojson"))
@@ -308,8 +289,8 @@ def count_detections(tiles, map_type):
             gjson = gjson.json()
 
             if config.DEBUG:
-                gjson_path = "./json/temporary/" + "_".join((map_type, str(tile[0]), str(tile[1]), str(tile[2]))) + \
-                             ".gjson"
+                gjson_path = "./json/temporary/" + "_".join((map_type, str(i), str(tile[0]), str(tile[1]),
+                                                             str(tile[2]))) + ".gjson"
                 with open(gjson_path, "w") as f:
                     f.write(json.dumps(gjson, indent=2))
 
@@ -358,7 +339,7 @@ def run(map_type, input_file):
 
     detections = count_detections(map_tiles, map_type)
 
-    print("Number of detections of class \'{}\' in selected area in the interval from {} to {}:\n{}"
+    print("Number of detections of class \'{}\' in selected area in the period from {} to {}:\n{}"
           .format(map_type, config.SEARCH['PAYLOAD']['startDatetime'], config.SEARCH['PAYLOAD']['endDatetime'],
                   detections))
 
