@@ -3,9 +3,9 @@ import datetime
 DEBUG = False
 MAX_ITERS = 40
 INTERVAL_REFRESH_STATUS = 20
-GSD_LIMIT = 0.5
+GSD_LIMIT = 0.55
 SCENES_LIMIT = 25
-DAYS_BACK = 2*365
+DAYS_BACK = 20*365
 
 COMMON_HEADERS = {"Content-Type": "application/json",}
 

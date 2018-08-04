@@ -3,6 +3,7 @@ import os
 import json
 import requests
 import time
+
 from PIL import Image
 
 import config
@@ -10,6 +11,19 @@ import exceptions
 
 
 def read_extent(input_file):
+    """
+    Validates and reads the extent coordinates from `input_file`. The input file must contain the path
+    `/geometries[0]/coordinates`.
+
+    :param input_file: Valid input file path.
+    :type: str
+    :return: Extent coordinates in form `[[[,], [,], ... , [,]]]`.
+    :rtype: list
+
+    :raises exceptions.FatalExceptions: Raised if file not found.
+    :raises exceptions.FieldNotFoundExceptions: Raised if unable to process the file.
+    """
+
     print("Reading input file...")
 
     if not os.path.isfile(input_file):
@@ -17,18 +31,38 @@ def read_extent(input_file):
     with open(input_file, "rb") as f:
         gjson = json.load(f)
         gjson_valid = \
-            "extent" in gjson.keys() and \
-            "geometries" in gjson["extent"].keys() and \
+            "geometries" in gjson.keys() and \
             len(gjson["extent"]["geometries"]) > 0 and \
-            "coordinates" in gjson["extent"]["geometries"][0].keys()
+            "coordinates" in gjson["geometries"][0].keys()
 
         if not gjson_valid:
             raise exceptions.FieldNotFoundException("Unable to read extent coordinates from the input file "
-                                                    "- expected path /extent/geometries[0]/coordinates not found")
-        return gjson["extent"]["geometries"][0]["coordinates"]
+                                                    "- expected path /geometries[0]/coordinates not found")
+        return gjson["geometries"][0]["coordinates"]
 
 
 def get_response(conf, headers=None, payload=None, suffix=None):
+    """
+    Generic method used to communicate with an API endpoint. Configuration for the request is defined in `conf` and
+    can be modified by the optional arguments. If debug mode is on, it prints both request and response body.
+
+    :param conf: A dict description of the API endpoint. It must contain the following keys: `"HEADERS"`, `"PAYLOAD"`,
+    `"METHOD"`, `"ENDPOINT"`.
+    :type: dict
+    :param headers: Optional parameter allowing to define custom header.
+    :type: str
+    :param payload: Optional parameter allowing to define custom payload.
+    :type: dict
+    :param suffix: Optional parameter allowing to append a suffix at the end of the header defined in `conf`.
+    :type: str
+    :return: API response in JSON format.
+    :rtype: str
+
+    :raises exceptions.NotProcessedException: Raised if the endpoint is not ready with response yet, but is still
+    processing. Should be caught by the caller if this is expected.
+    :raises requests.RequestException: Raised if status code of the response is other than 200.
+    """
+
     headers = conf["HEADERS"] if not headers else headers
     payload = conf["PAYLOAD"] if not payload else payload
     suffix = "" if not suffix else suffix
@@ -54,6 +88,21 @@ def get_response(conf, headers=None, payload=None, suffix=None):
 
 
 def get_scenes(extent, auth_token):
+    """
+    Returns a list of `sceneId`s of all scenes with no cloud coverage and GSD under limit specified in the
+    configuration file.
+
+    :param extent: Extent coordinates in form `[[[,], [,], ... , [,]]]`.
+    :type: list
+    :param auth_token: JWT authorization token.
+    :type: str
+    :return: List of `sceneId` of eligible scenes.
+    :rtype: list
+
+    :raises exceptions.InitiateException: Raised if pipeline initialization fails.
+    :raises exceptions.FatalException: Raised if pipeline processing times out.
+    :raises exceptions.FieldNotFoundException: Raised if a required field not found.
+    """
     print("Getting scenes...")
 
     headers = config.SEARCH["HEADERS"].copy()
@@ -68,8 +117,8 @@ def get_scenes(extent, auth_token):
         response = get_response(config.SEARCH, headers, init_payload, "/initiate")
 
         if "pipelineId" not in response.keys():
-            raise exceptions.InitiateException("Failed to initiate pipeline - no pipelineId in response body: \n{}".format(
-                json.dumps(response.json(), indent=2)))
+            raise exceptions.InitiateException("Failed to initiate pipeline - no pipelineId in response body: \n{}"
+                                               .format(json.dumps(response.json(), indent=2)))
 
         pipeline_id = response["pipelineId"]
 
@@ -90,10 +139,10 @@ def get_scenes(extent, auth_token):
 
         for result in response["results"]:
             if not result['sceneId']:
-                raise exceptions.FieldNotFoundException("SceneId field not found in /search/retrieve response!")
+                raise exceptions.FieldNotFoundException("sceneId field not found in /search/retrieve response!")
 
             is_scene_eligible = type(result["cloudCover"] == int) and result["cloudCover"] < 0.05 and \
-                result["bands"][0]["gsd"] < 0.5
+                result["bands"][0]["gsd"] < config.GSD_LIMIT
 
             if is_scene_eligible:
                 scene_ids.append(result["sceneId"])
@@ -108,6 +157,24 @@ def get_scenes(extent, auth_token):
 
 
 def collect_tiles(extent, auth_token, scene_id, map_type):
+    """
+    Collects Kraken tiles for a scene given by `scene_id` and map type given by `map_type`.
+
+    :param extent: Extent coordinates in form `[[[,], [,], ... , [,]]]`.
+    :type: list
+    :param auth_token: JWT authorization token.
+    :type: str
+    :param scene_id: Hash identifying the scene to get tiles for.
+    :type: str
+    :param map_type: Type of the desired map, e.g. 'cars', 'aircraft', 'cows', etc.
+    :type: str
+    :return: Response object containing a list of items with `mapId` and `tiles` fields.
+    :rtype: requests.Response
+
+    :raises exceptions.InitiateException: Raised if pipeline initialization fails.
+    :raises exceptions.FatalException: Raised if pipeline processing times out.
+    """
+
     print("Collecting tiles...")
 
     payload = config.KRAKEN["PAYLOAD"].copy()
@@ -143,6 +210,17 @@ def collect_tiles(extent, auth_token, scene_id, map_type):
 
 
 def download_images(tiles, map_type):
+    """
+    Downloads images corresponding to collected tiles in PNG format and writes them to `./img/`.
+
+    :param tiles: Response object containing a list of items with `mapId` and `tiles` fields; response of Kraken API.
+    :rtype requests.Response
+    :param map_type: Type of the desired map, e.g. 'cars', 'aircraft', 'cows', etc.
+    :type: str
+
+    :raises requests.RequestException: Raised if image download fails.
+    """
+
     print("Downloading images...")
 
     base_url = config.KRAK_PATH + "/kraken/grid"
@@ -159,6 +237,18 @@ def download_images(tiles, map_type):
 
 
 def blend_images(path, map_type_fg, map_type_bg):
+    """
+    Maps background and foreground images of the same size in `path` into pairs based on their (identifying uniquely
+    map type and coordinates), lays them over each other, and removes the original images.
+
+    :param path: Path to search images in.
+    :type: str
+    :param map_type_fg: Map type of the foreground image.
+    :param: str
+    :param map_type_bg: Map type of the background image.
+    :param: str
+    """
+
     print("Blending images...")
 
     fg_files = set(f for f in os.listdir(path) if f.startswith(map_type_fg))
@@ -189,13 +279,27 @@ def blend_images(path, map_type_fg, map_type_bg):
 
 
 def count_detections(tiles, map_type):
+    """
+    Counts detections of class `map_type` in `tiles`.
+
+    :param tiles: Response object containing a list of items with `mapId` and `tiles` fields; response of Kraken API.
+    :rtype requests.Response
+    :param map_type: Class name of the detected feature (corresponds to map type).
+    :return: Number of detections in `tiles`.
+    :rtype: int
+
+    :raises requests.RequestException: Raised if the communication with the endpoint is unsuccessful.
+    :raises exceptions.FieldNotFoundException: Raised if unable to parse the received geojson.
+    """
+
     print("Counting detections...")
 
     base_url = config.KRAK_PATH + "/kraken/grid"
     detections = 0
     for item in tiles:
         for tile in item["tiles"]:
-            url = "/".join((base_url, item["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]), "detections.geojson"))
+            url = "/".join((base_url, item["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]),
+                            "detections.geojson"))
             gjson = requests.get(url)
             if gjson.status_code != 200:
                 raise requests.RequestException("Failed to get {} detections: \n{} \n{}".format(
@@ -204,14 +308,16 @@ def count_detections(tiles, map_type):
             gjson = gjson.json()
 
             if config.DEBUG:
-                gjson_path = "./json/temporary/" + "_".join((map_type, str(tile[0]), str(tile[1]), str(tile[2]))) + ".gjson"
+                gjson_path = "./json/temporary/" + "_".join((map_type, str(tile[0]), str(tile[1]), str(tile[2]))) + \
+                             ".gjson"
                 with open(gjson_path, "w") as f:
                     f.write(json.dumps(gjson, indent=2))
 
             if "features" not in gjson.keys():
                 raise exceptions.FieldNotFoundException("Got invalid {} detections.geojson file - "
                                                         "missing features field: \n{}".format(map_type,
-                                                                                              json.dumps(gjson, indent=2)))
+                                                                                              json.dumps(gjson,
+                                                                                                         indent=2)))
             for feature in gjson["features"]:
                 if feature["properties"]["class"] == map_type:
                     detections += feature["properties"]["count"]
