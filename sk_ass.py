@@ -48,51 +48,60 @@ def get_response(conf, headers=None, payload=None, suffix=None):
                                         json.dumps(response.json(), indent=2)))
     if config.DEBUG:
         print("RESPONSE: {}".format(endpoint))
-        json.dumps(response.json(), indent=2)
+        print(json.dumps(response.json(), indent=2))
 
     return response.json()
 
 
-def get_scene_id(extent, auth_token):
-    print("Getting sceneId...")
-
-    payload = config.SEARCH["PAYLOAD"].copy()
-    payload["extent"]["geometries"][0]["coordinates"] = extent
+def get_scenes(extent, auth_token):
+    print("Getting scenes...")
 
     headers = config.SEARCH["HEADERS"].copy()
     headers["Authorization"] = "Bearer " + auth_token
 
-    response = get_response(config.SEARCH, headers, payload, "/initiate")
+    init_payload = config.SEARCH["PAYLOAD"].copy()
+    init_payload["extent"]["geometries"][0]["coordinates"] = extent
 
-    if "pipelineId" not in response.keys():
-        raise exceptions.InitiateException("Failed to initiate pipeline - no pipelineId in response body: \n{}".format(
-            json.dumps(response, indent=2)))
-    payload = {"pipelineId": response["pipelineId"]}
+    cursor = "first"
+    scene_ids = []
+    while cursor is not None:
+        response = get_response(config.SEARCH, headers, init_payload, "/initiate")
 
-    iters = 0
-    retrieved = False
-    while not retrieved:
-        try:
-            response = get_response(config.SEARCH, headers, payload, "/retrieve")
-            retrieved = True
-        except exceptions.NotProcessedException:
-            if iters >= config.MAX_ITERS:
-                raise exceptions.FatalException("Pipeline processing timeout after {} s".format(
-                    config.MAX_ITERS*config.INTERVAL_REFRESH_STATUS))
-            iters += 1
-            time.sleep(config.INTERVAL_REFRESH_STATUS)
+        if "pipelineId" not in response.keys():
+            raise exceptions.InitiateException("Failed to initiate pipeline - no pipelineId in response body: \n{}".format(
+                json.dumps(response, indent=2)))
 
-    bands = {}
+        pipeline_id = response["pipelineId"]
 
-    for result in response["results"]:
-        if result["bands"][0]["gsd"] < config.GSD_LIMIT:
-            bands = result
-            break
+        search_payload = {"pipelineId": pipeline_id}
 
-    if not bands or not bands['sceneId']:
-        raise exceptions.FieldNotFoundException("Band with suitable GSD not found!")
+        iters = 0
+        retrieved = False
+        while not retrieved:
+            try:
+                response = get_response(config.SEARCH, headers, search_payload, "/retrieve")
+                retrieved = True
+            except exceptions.NotProcessedException:
+                if iters >= config.MAX_ITERS:
+                    raise exceptions.FatalException("Pipeline processing timeout after {} s".format(
+                        config.MAX_ITERS*config.INTERVAL_REFRESH_STATUS))
+                iters += 1
+                time.sleep(config.INTERVAL_REFRESH_STATUS)
 
-    return bands["sceneId"]
+        for result in response["results"]:
+            if not result['sceneId']:
+                raise exceptions.FieldNotFoundException("SceneId field not found in /search/retrieve response!")
+
+            is_scene_eligible = type(result["cloudCover"] == int) and result["cloudCover"] < 0.05 and \
+                result["bands"][0]["gsd"] < 0.5
+
+            if is_scene_eligible:
+                scene_ids.append(result["sceneId"])
+
+        cursor = response["cursor"]
+        init_payload["cursor"] = cursor
+
+    return scene_ids
 
 
 def collect_tiles(extent, auth_token, scene_id, map_type):
@@ -218,11 +227,11 @@ def run(map_type, input_file):
 
     auth_token = auth_response["id_token"]
 
-    scene_id = get_scene_id(extent, auth_token)
+    scene_ids = get_scenes(extent, auth_token)
 
-    map_tiles = collect_tiles(extent, auth_token, scene_id, map_type)
+    map_tiles = collect_tiles(extent, auth_token, scene_ids, map_type)
 
-    imag_tiles = collect_tiles(extent, auth_token, scene_id, "imagery")
+    imag_tiles = collect_tiles(extent, auth_token, scene_ids, "imagery")
 
     download_images(map_tiles, "cars")
 

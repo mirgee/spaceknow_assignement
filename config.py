@@ -1,3 +1,5 @@
+import datetime
+
 DEBUG = False
 MAX_ITERS = 10
 INTERVAL_REFRESH_STATUS = 15
@@ -35,6 +37,8 @@ SEARCH = {
     "PAYLOAD": {
         "provider": "gbdx",
         "dataset": "idaho-pansharpened",
+        "startDatetime": "2016-01-01 00:00:00",
+        "endDatetime": datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S"),
         "extent": {
             "type": "GeometryCollection",
             "geometries": [
