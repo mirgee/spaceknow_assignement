@@ -1,0 +1,21 @@
+{
+    "provider": "gbdx",
+    "dataset": "idaho-pansharpened",
+    "extent": {
+        "type": "GeometryCollection",
+        "geometries": [
+            {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [ 153.105222, -27.390124],
+                        [ 153.103551, -27.392584],
+                        [ 153.105318, -27.393370],
+                        [ 153.106794, -27.390879],
+                        [ 153.105222, -27.390124]
+                    ]
+                ]
+            }
+        ]
+    }
+}

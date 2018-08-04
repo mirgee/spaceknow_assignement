@@ -10,6 +10,8 @@ import exceptions
 
 
 def read_extent(input_file):
+    print("Reading input file...")
+
     if not os.path.isfile(input_file):
         raise exceptions.FatalException("Input file {} not found".format(input_file))
     with open(input_file, "rb") as f:
@@ -34,19 +36,26 @@ def get_response(conf, headers=None, payload=None, suffix=None):
 
     response = requests.request(conf["METHOD"], endpoint, headers=headers, json=payload)
 
+    if config.DEBUG:
+        print("REQUEST: {}".format(endpoint))
+        print(response.request.body)
+
     if response.status_code != 200:
         if response.json()["error"] == "PIPELINE-NOT-PROCESSED":
             raise exceptions.NotProcessedException("Pipeline not processed yet")
 
-        if config.DEBUG:
-            print(response.request.body)
         raise requests.RequestException("{} {} {} \n{}".format(conf["METHOD"], endpoint, response.status_code,
                                         json.dumps(response.json(), indent=2)))
+    if config.DEBUG:
+        print("RESPONSE: {}".format(endpoint))
+        json.dumps(response.json(), indent=2)
 
     return response.json()
 
 
 def get_scene_id(extent, auth_token):
+    print("Getting sceneId...")
+
     payload = config.SEARCH["PAYLOAD"].copy()
     payload["extent"]["geometries"][0]["coordinates"] = extent
 
@@ -73,9 +82,6 @@ def get_scene_id(extent, auth_token):
             iters += 1
             time.sleep(config.INTERVAL_REFRESH_STATUS)
 
-    if config.DEBUG:
-        print(json.dumps(response, indent=2))
-
     bands = {}
 
     for result in response["results"]:
@@ -89,7 +95,9 @@ def get_scene_id(extent, auth_token):
     return bands["sceneId"]
 
 
-def get_tiles(extent, auth_token, scene_id, map_type):
+def collect_tiles(extent, auth_token, scene_id, map_type):
+    print("Collecting tiles...")
+
     payload = config.KRAKEN["PAYLOAD"].copy()
     payload["extent"]["coordinates"] = [extent]
     payload['sceneId'] = scene_id
@@ -125,6 +133,8 @@ def get_tiles(extent, auth_token, scene_id, map_type):
 
 
 def download_images(tiles, map_type):
+    print("Downloading images...")
+
     base_url = config.KRAK_PATH + "/kraken/grid"
     for tile in tiles["tiles"]:
         url = "/".join((base_url, tiles["mapId"], "-", str(tile[0]), str(tile[1]), str(tile[2]), map_type + ".png"))
@@ -138,9 +148,12 @@ def download_images(tiles, map_type):
 
 
 def blend_images(path, map_type_fg, map_type_bg):
+    print("Blending images...")
+
     fg_files = set(f for f in os.listdir(path) if f.startswith(map_type_fg))
     bg_files = set(f for f in os.listdir(path) if f.startswith(map_type_bg))
 
+    num_blended = 0
     for fg_file in fg_files:
         for bg_file in bg_files:
             fg_coords = "_".join(fg_file.split("_")[1:])
@@ -153,6 +166,12 @@ def blend_images(path, map_type_fg, map_type_bg):
                 bg.paste(fg, (0, 0), fg)
                 bg.save(os.path.join(path, "blend_" + fg_coords))
                 bg.show()
+                num_blended += 1
+
+    if num_blended < len(fg_files):
+        print("Warning: {} tiles have not been matched!".format(fg_files-num_blended))
+
+    print("Images can be found in ./img/")
 
     if not config.DEBUG:
         for file in set.union(fg_files, bg_files):
@@ -162,6 +181,8 @@ def blend_images(path, map_type_fg, map_type_bg):
 
 
 def count_detections(tiles, map_type):
+    print("Counting detections...")
+
     base_url = config.KRAK_PATH + "/kraken/grid"
     detections = 0
     for tile in tiles["tiles"]:
@@ -171,7 +192,13 @@ def count_detections(tiles, map_type):
             raise requests.RequestException("Failed to get {} detections: \n{} \n{}".format(
                 map_type, gjson.status_code, json.dumps(gjson, indent=2)))
 
+        if config.DEBUG:
+            gjson_path = "./json/temporary/" + "_".join((map_type, str(tile[0]), str(tile[1]), str(tile[2]))) + ".gjson"
+            with open(gjson_path, "w") as f:
+                json.dump(gjson.content, f, indent=2)
+
         gjson = gjson.json()
+
         if "features" not in gjson.keys():
             raise exceptions.FieldNotFoundException("Got invalid {} detections.geojson file - "
                                                     "missing features field: \n{}".format(map_type,
@@ -193,9 +220,9 @@ def run(map_type, input_file):
 
     scene_id = get_scene_id(extent, auth_token)
 
-    map_tiles = get_tiles(extent, auth_token, scene_id, map_type)
+    map_tiles = collect_tiles(extent, auth_token, scene_id, map_type)
 
-    imag_tiles = get_tiles(extent, auth_token, scene_id, "imagery")
+    imag_tiles = collect_tiles(extent, auth_token, scene_id, "imagery")
 
     download_images(map_tiles, "cars")
 
@@ -209,7 +236,8 @@ def run(map_type, input_file):
 
 if __name__ == '__main__':
     avail_input_files = [
-        "./json/input.geojson",
+        "./json/inputs/input.geojson",
+        "./json/inputs/input_1.geojson",
     ]
 
     parser = argparse.ArgumentParser("sk_ass",
