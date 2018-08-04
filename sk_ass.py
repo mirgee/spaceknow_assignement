@@ -1,3 +1,4 @@
+import argparse
 import os
 import json
 import requests
@@ -207,5 +208,25 @@ def run(map_type, input_file):
     print("Number of detections of class \'{}\'in selected area: {}".format(map_type, detections))
 
 if __name__ == '__main__':
-    run("cars", "./json/input.geojson")
+    avail_input_files = [
+        "./json/input.geojson",
+    ]
+
+    parser = argparse.ArgumentParser("sk_ass",
+                                     description="Detect, count and display selected features in a geographical area.")
+
+    parser.add_argument("-f", dest="input_file", default=avail_input_files[0], type=str,
+                        help="input geojson specifying desired extent on path /extent/geometries[0]/coordinates "
+                             "(default: \'{}\')".format(avail_input_files[0]))
+
+    parser.add_argument("-m", dest="map_type", default="cars", type=str,
+                        help="type of feature to be detected (default: cars)")
+
+    parser.add_argument("-d", action="store_true", dest="debug",
+                        help="turns debugging mode on - debugging messages and received jsons are printed out")
+
+    args = parser.parse_args()
+
+    config.DEBUG = args.debug
+    run(args.map_type, args.input_file)
 
