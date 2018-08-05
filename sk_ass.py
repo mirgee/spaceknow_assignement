@@ -22,8 +22,6 @@ def read_extent(input_file):
     :raises exceptions.FieldNotFoundExceptions: Raised if unable to process the file.
     """
 
-    print("Reading input file...")
-
     if not os.path.isfile(input_file):
         raise exceptions.FatalException("Input file {} not found".format(input_file))
     with open(input_file, "rb") as f:
@@ -93,7 +91,6 @@ def get_scenes(extent, auth_token):
     :raises exceptions.FatalException: Raised if pipeline processing times out.
     :raises exceptions.FieldNotFoundException: Raised if a required field not found.
     """
-    print("Getting scenes...")
 
     headers = config.SEARCH["HEADERS"].copy()
     headers["Authorization"] = "Bearer " + auth_token
@@ -160,8 +157,6 @@ def collect_tiles(extent, auth_token, scene_id, map_type):
     :raises exceptions.FatalException: Raised if pipeline processing times out.
     """
 
-    print("Collecting tiles...")
-
     payload = config.KRAKEN["PAYLOAD"].copy()
     payload["extent"]["coordinates"] = [extent]
     payload['sceneId'] = scene_id
@@ -205,8 +200,6 @@ def download_images(tiles, map_type):
     :raises requests.RequestException: Raised if image download fails.
     """
 
-    print("Downloading images...")
-
     base_url = config.KRAK_PATH + "/kraken/grid"
     for i, item in enumerate(tiles):
         for tile in item["tiles"]:
@@ -231,8 +224,6 @@ def blend_images(path, map_type_fg, map_type_bg):
     :param str map_type_fg: Map type of the foreground image.
     :param str map_type_bg: Map type of the background image.
     """
-
-    print("Blending images...")
 
     fg_files = set(f for f in os.listdir(path) if f.startswith(map_type_fg))
     bg_files = set(f for f in os.listdir(path) if f.startswith(map_type_bg))
@@ -273,8 +264,6 @@ def count_detections(tiles, map_type):
     :raises exceptions.FieldNotFoundException: Raised if unable to parse the received geojson.
     """
 
-    print("Counting detections...")
-
     base_url = config.KRAK_PATH + "/kraken/grid"
     detections = 0
     for i, item in enumerate(tiles):
@@ -308,12 +297,14 @@ def count_detections(tiles, map_type):
 
 def run(map_type, input_file):
 
+    print("Reading input file...")
     extent = read_extent(input_file)
 
     auth_response = get_response(config.AUTH)
 
     auth_token = auth_response["id_token"]
 
+    print("Getting scenes...")
     scene_ids = get_scenes(extent, auth_token)
 
     if len(scene_ids) > 0:
@@ -324,19 +315,25 @@ def run(map_type, input_file):
 
     map_tiles, imag_tiles = [], []
 
-    for scene_id in scene_ids:
+    for i, scene_id in enumerate(scene_ids):
+        print("Collecting {} tiles... {}/{}".format(map_type, i+1, len(scene_ids)))
         map_tiles.append(collect_tiles(extent, auth_token, scene_id, map_type))
 
+        print("Collecting imagery tiles... {}/{}".format(i+1, len(scene_ids)))
         imag_tiles.append(collect_tiles(extent, auth_token, scene_id, "imagery"))
 
-    download_images(map_tiles, "cars")
+    print("Downloading {} images...".format(map_type))
+    download_images(map_tiles, map_type)
 
+    print("Downloading truecolor images...")
     download_images(imag_tiles, "truecolor")
 
+    print("Blending images...")
     blend_images("./img", "cars", "truecolor")
 
     print("Images can be found in ./img/")
 
+    print("Counting detections...")
     detections = count_detections(map_tiles, map_type)
 
     print("Number of detections of class \'{}\' in selected area in the period from {} to {}:\n{}"
@@ -346,6 +343,7 @@ def run(map_type, input_file):
 if __name__ == '__main__':
     avail_input_files = [
         "./json/inputs/brisbane_airport_staff_parking_lot.geojson",
+        "./json/inputs/brisbane_alpha_airport_parking.geojson",  # not many cars here
     ]
 
     supported_map_types = [
@@ -356,11 +354,11 @@ if __name__ == '__main__':
                                      description="Detect, count and display selected features in a geographical area.")
 
     parser.add_argument("-f", dest="input_file", default=avail_input_files[0], type=str,
-                        help="input geojson specifying desired extent on path /extent/geometries[0]/coordinates"
+                        help="input geojson specifying the desired extent"
                              "(default: \'{}\')".format(avail_input_files[0]))
 
     parser.add_argument("-m", dest="map_type", default=supported_map_types[0], type=str, choices=supported_map_types,
-                        help="type of feature to be detected (default: {})".format(supported_map_types[0]))
+                        help="class of feature to be detected (default: {})".format(supported_map_types[0]))
 
     parser.add_argument("-g", action="store_true", dest="debug",
                         help="turns debugging mode on - debugging messages and traffic are printed out"
@@ -369,10 +367,14 @@ if __name__ == '__main__':
     parser.add_argument("-d", default=config.DAYS_BACK, dest="days_back",
                         help="age of the oldest analyzed imagery in days (default: {})".format(config.DAYS_BACK))
 
+    parser.add_argument("-s", default=config.GSD_LIMIT, dest="gsd_limit",
+                        help="maximum allowable ground sample distance (GSD) (default: {})".format(config.GSD_LIMIT))
+
     args = parser.parse_args()
 
     config.DEBUG = args.debug
     config.DAYS_BACK = args.days_back
+    config.GSD_LIMIT = args.gsd_limit
 
     run(args.map_type, args.input_file)
 
