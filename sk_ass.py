@@ -42,8 +42,8 @@ def get_response(conf, headers=None, payload=None, suffix=None):
     Generic method used to communicate with an API endpoint. Configuration for the request is defined in `conf` and
     can be modified by the optional arguments. If debug mode is on, it prints both request and response body.
 
-    :param dict conf: A dict description of the API endpoint. It must contain the following keys: `"HEADERS"`, `"PAYLOAD"`,
-    `"METHOD"`, `"ENDPOINT"`.
+    :param dict conf: A dict description of the API endpoint. It must contain the following keys: `"HEADERS"`,
+    `"PAYLOAD"`, `"METHOD"`, `"ENDPOINT"`.
     :param str headers: Optional parameter allowing to define custom header.
     :param dict payload: Optional parameter allowing to define custom payload.
     :param str suffix: Optional parameter allowing to append a suffix at the end of the header defined in `conf`.
@@ -193,7 +193,7 @@ def download_images(tiles, map_type):
     """
     Downloads images corresponding to collected tiles in PNG format and writes them to `./img/`.
 
-    :param requests.Response tiles: Response object containing a list of items with `mapId` and `tiles` fields;
+    :param list tiles: Response object containing a list of items with `mapId` and `tiles` fields;
     response of Kraken API.
     :param str map_type: Type of the desired map, e.g. 'cars', 'aircraft', 'cows', etc.
 
@@ -256,7 +256,8 @@ def count_detections(tiles, map_type):
     """
     Counts detections of class `map_type` in `tiles`.
 
-    :param requests.Response tiles: Response object containing a list of items with `mapId` and `tiles` fields; response of Kraken API.
+    :param list tiles: Response object containing a list of items with `mapId` and `tiles` fields; response of Kraken
+    API.
     :param str map_type: Class name of the detected feature (corresponds to map type).
     :return int: Number of detections in `tiles`.
 

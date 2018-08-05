@@ -43,7 +43,17 @@ At the moment, the following optional arguments are supported:
 * `-h`: displays help
 
 The resulting images can be found in `./img/`, and the number of detected instances over the period is printed out in 
-the console. 
+the console.
+
+Be patient! Based on the age of oldest scene analyzed, selected area, extent size and other factors, execution may 
+take 5-20 minutes.
+
+## Running unit tests
+
+Running unit tests is easy, simply type
+```
+python3.6 test.py 
+```
 
 ## Authors
 
