@@ -105,7 +105,7 @@ def get_scenes(extent, auth_token):
 
         if "pipelineId" not in response.keys():
             raise exceptions.InitiateException("Failed to initiate pipeline - no pipelineId in response body: \n{}"
-                                               .format(json.dumps(response.json(), indent=2)))
+                                               .format(json.dumps(response, indent=2)))
 
         pipeline_id = response["pipelineId"]
 
@@ -168,7 +168,7 @@ def collect_tiles(extent, auth_token, scene_id, map_type):
 
     if "pipelineId" not in response.keys():
         raise exceptions.InitiateException("Failed to initiate pipeline - no pipelineId in response body: \n{}".format(
-            json.dumps(response.json(), indent=2)))
+            json.dumps(response, indent=2)))
 
     payload = {"pipelineId": response["pipelineId"]}
 
@@ -276,12 +276,6 @@ def count_detections(tiles, map_type):
                     map_type, gjson.status_code, json.dumps(gjson.json(), indent=2)))
 
             gjson = gjson.json()
-
-            if config.DEBUG:
-                gjson_path = "./json/temporary/" + "_".join((map_type, str(i), str(tile[0]), str(tile[1]),
-                                                             str(tile[2]))) + ".gjson"
-                with open(gjson_path, "w") as f:
-                    f.write(json.dumps(gjson, indent=2))
 
             if "features" not in gjson.keys():
                 raise exceptions.FieldNotFoundException("Got invalid {} detections.geojson file - "

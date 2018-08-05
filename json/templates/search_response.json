@@ -1,0 +1,4068 @@
+{
+  "cursor": null,
+  "results": [
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.56,
+          "approximateResolutionY": 0.56,
+          "bitDepth": 16,
+          "crsOriginX": 17025889.4283533,
+          "crsOriginY": -3167244.704024563,
+          "gsd": 0.565,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.634332184939222,
+          "pixelSizeY": -0.634332184939222
+        },
+        {
+          "approximateResolutionX": 0.56,
+          "approximateResolutionY": 0.56,
+          "bitDepth": 16,
+          "crsOriginX": 17025889.4283533,
+          "crsOriginY": -3167244.704024563,
+          "gsd": 0.565,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.634332184939222,
+          "pixelSizeY": -0.634332184939222
+        },
+        {
+          "approximateResolutionX": 0.56,
+          "approximateResolutionY": 0.56,
+          "bitDepth": 16,
+          "crsOriginX": 17025889.4283533,
+          "crsOriginY": -3167244.704024563,
+          "gsd": 0.565,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.634332184939222,
+          "pixelSizeY": -0.634332184939222
+        },
+        {
+          "approximateResolutionX": 0.56,
+          "approximateResolutionY": 0.56,
+          "bitDepth": 16,
+          "crsOriginX": 17025889.4283533,
+          "crsOriginY": -3167244.704024563,
+          "gsd": 0.565,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.634332184939222,
+          "pixelSizeY": -0.634332184939222
+        },
+        {
+          "approximateResolutionX": 0.56,
+          "approximateResolutionY": 0.56,
+          "bitDepth": 16,
+          "crsOriginX": 17025889.4283533,
+          "crsOriginY": -3167244.704024563,
+          "gsd": 0.565,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.634332184939222,
+          "pixelSizeY": -0.634332184939222
+        },
+        {
+          "approximateResolutionX": 0.56,
+          "approximateResolutionY": 0.56,
+          "bitDepth": 16,
+          "crsOriginX": 17025889.4283533,
+          "crsOriginY": -3167244.704024563,
+          "gsd": 0.565,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.634332184939222,
+          "pixelSizeY": -0.634332184939222
+        },
+        {
+          "approximateResolutionX": 0.56,
+          "approximateResolutionY": 0.56,
+          "bitDepth": 16,
+          "crsOriginX": 17025889.4283533,
+          "crsOriginY": -3167244.704024563,
+          "gsd": 0.565,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.634332184939222,
+          "pixelSizeY": -0.634332184939222
+        },
+        {
+          "approximateResolutionX": 0.56,
+          "approximateResolutionY": 0.56,
+          "bitDepth": 16,
+          "crsOriginX": 17025889.4283533,
+          "crsOriginY": -3167244.704024563,
+          "gsd": 0.565,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.634332184939222,
+          "pixelSizeY": -0.634332184939222
+        }
+      ],
+      "cloudCover": 0.0,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-07-12 23:55:02",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.1580996,
+                -27.4781305
+              ],
+              [
+                152.9463796,
+                -27.4932196
+              ],
+              [
+                152.9463225,
+                -27.3646547
+              ],
+              [
+                153.1579918,
+                -27.350147
+              ],
+              [
+                153.1580996,
+                -27.4781305
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 25.5,
+      "provider": "gbdx",
+      "satellite": "WV02",
+      "satelliteAzimuth": 69.6,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7fZXlHFJH_ItI4VVA_RwB9TNDYegfYVh7e1COFmWYrPVSZH80",
+      "sunAzimuth": 33.2,
+      "sunElevation": 33.1
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.63,
+          "approximateResolutionY": 0.63,
+          "bitDepth": 16,
+          "crsOriginX": 17025430.806183588,
+          "crsOriginY": -3163881.4747800156,
+          "gsd": 0.629,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.7077502618997801,
+          "pixelSizeY": -0.7077502618997801
+        },
+        {
+          "approximateResolutionX": 0.63,
+          "approximateResolutionY": 0.63,
+          "bitDepth": 16,
+          "crsOriginX": 17025430.806183588,
+          "crsOriginY": -3163881.4747800156,
+          "gsd": 0.629,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.7077502618997801,
+          "pixelSizeY": -0.7077502618997801
+        },
+        {
+          "approximateResolutionX": 0.63,
+          "approximateResolutionY": 0.63,
+          "bitDepth": 16,
+          "crsOriginX": 17025430.806183588,
+          "crsOriginY": -3163881.4747800156,
+          "gsd": 0.629,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.7077502618997801,
+          "pixelSizeY": -0.7077502618997801
+        },
+        {
+          "approximateResolutionX": 0.63,
+          "approximateResolutionY": 0.63,
+          "bitDepth": 16,
+          "crsOriginX": 17025430.806183588,
+          "crsOriginY": -3163881.4747800156,
+          "gsd": 0.629,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.7077502618997801,
+          "pixelSizeY": -0.7077502618997801
+        },
+        {
+          "approximateResolutionX": 0.63,
+          "approximateResolutionY": 0.63,
+          "bitDepth": 16,
+          "crsOriginX": 17025430.806183588,
+          "crsOriginY": -3163881.4747800156,
+          "gsd": 0.629,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.7077502618997801,
+          "pixelSizeY": -0.7077502618997801
+        },
+        {
+          "approximateResolutionX": 0.63,
+          "approximateResolutionY": 0.63,
+          "bitDepth": 16,
+          "crsOriginX": 17025430.806183588,
+          "crsOriginY": -3163881.4747800156,
+          "gsd": 0.629,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.7077502618997801,
+          "pixelSizeY": -0.7077502618997801
+        },
+        {
+          "approximateResolutionX": 0.63,
+          "approximateResolutionY": 0.63,
+          "bitDepth": 16,
+          "crsOriginX": 17025430.806183588,
+          "crsOriginY": -3163881.4747800156,
+          "gsd": 0.629,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.7077502618997801,
+          "pixelSizeY": -0.7077502618997801
+        },
+        {
+          "approximateResolutionX": 0.63,
+          "approximateResolutionY": 0.63,
+          "bitDepth": 16,
+          "crsOriginX": 17025430.806183588,
+          "crsOriginY": -3163881.4747800156,
+          "gsd": 0.629,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.7077502618997801,
+          "pixelSizeY": -0.7077502618997801
+        }
+      ],
+      "cloudCover": 0.0,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-06-04 23:53:16",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.1612945,
+                -27.4918529
+              ],
+              [
+                152.9429174,
+                -27.4525534
+              ],
+              [
+                152.9424378,
+                -27.3231728
+              ],
+              [
+                153.1616603,
+                -27.3635748
+              ],
+              [
+                153.1612945,
+                -27.4918529
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 31.2,
+      "provider": "gbdx",
+      "satellite": "WV02",
+      "satelliteAzimuth": 141.7,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7f3Vo7zw61aF2e2neEGMhkDsVTvQpBFuEcfU6oXdrYDPknicq",
+      "sunAzimuth": 31.5,
+      "sunElevation": 33.2
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.54,
+          "bitDepth": 16,
+          "crsOriginX": 17032463.012785826,
+          "crsOriginY": -3168926.318646837,
+          "gsd": 0.539,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.606643081628383,
+          "pixelSizeY": -0.606643081628383
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.54,
+          "bitDepth": 16,
+          "crsOriginX": 17032463.012785826,
+          "crsOriginY": -3168926.318646837,
+          "gsd": 0.539,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.606643081628383,
+          "pixelSizeY": -0.606643081628383
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.54,
+          "bitDepth": 16,
+          "crsOriginX": 17032463.012785826,
+          "crsOriginY": -3168926.318646837,
+          "gsd": 0.539,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.606643081628383,
+          "pixelSizeY": -0.606643081628383
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.54,
+          "bitDepth": 16,
+          "crsOriginX": 17032463.012785826,
+          "crsOriginY": -3168926.318646837,
+          "gsd": 0.539,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.606643081628383,
+          "pixelSizeY": -0.606643081628383
+        }
+      ],
+      "cloudCover": 0.0,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-05-19 23:55:16",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.005692,
+                -27.3637634
+              ],
+              [
+                153.1865894,
+                -27.374007
+              ],
+              [
+                153.1868299,
+                -27.5159387
+              ],
+              [
+                153.0055007,
+                -27.506105
+              ],
+              [
+                153.005692,
+                -27.3637634
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 28.0,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 169.9,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7dzNcHJJtXxmCr-8zPBGREY9V24ADV4CsC-iw8dRIK-7FSA88",
+      "sunAzimuth": 32.1,
+      "sunElevation": 35.9
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17032463.012785826,
+          "crsOriginY": -3156237.771951498,
+          "gsd": 0.538,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.6042452828867688,
+          "pixelSizeY": -0.6042452828867688
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17032463.012785826,
+          "crsOriginY": -3156237.771951498,
+          "gsd": 0.538,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.6042452828867688,
+          "pixelSizeY": -0.6042452828867688
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17032463.012785826,
+          "crsOriginY": -3156237.771951498,
+          "gsd": 0.538,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.6042452828867688,
+          "pixelSizeY": -0.6042452828867688
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17032463.012785826,
+          "crsOriginY": -3156237.771951498,
+          "gsd": 0.538,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.6042452828867688,
+          "pixelSizeY": -0.6042452828867688
+        }
+      ],
+      "cloudCover": 0.0,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-05-19 23:55:14",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.0057915,
+                -27.2630937
+              ],
+              [
+                153.1864273,
+                -27.2737702
+              ],
+              [
+                153.1866454,
+                -27.4062471
+              ],
+              [
+                153.0056747,
+                -27.3962231
+              ],
+              [
+                153.0057915,
+                -27.2630937
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 27.9,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 169.3,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7LQ581iQR5Epw2kpibwvrDE5oIYRG8DQVnE2jY8oGedIBvrTT",
+      "sunAzimuth": 32.1,
+      "sunElevation": 36.0
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033150.946040392,
+          "crsOriginY": -3169996.4370428296,
+          "gsd": 0.51,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5704255842177333,
+          "pixelSizeY": -0.5704255842177333
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033150.946040392,
+          "crsOriginY": -3169996.4370428296,
+          "gsd": 0.51,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5704255842177333,
+          "pixelSizeY": -0.5704255842177333
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033150.946040392,
+          "crsOriginY": -3169996.4370428296,
+          "gsd": 0.51,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5704255842177333,
+          "pixelSizeY": -0.5704255842177333
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033150.946040392,
+          "crsOriginY": -3169996.4370428296,
+          "gsd": 0.51,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5704255842177333,
+          "pixelSizeY": -0.5704255842177333
+        }
+      ],
+      "cloudCover": 0.0,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-05-19 23:54:11",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.011815,
+                -27.3768358
+              ],
+              [
+                153.1802454,
+                -27.3723731
+              ],
+              [
+                153.1798671,
+                -27.5155848
+              ],
+              [
+                153.0120292,
+                -27.5194212
+              ],
+              [
+                153.011815,
+                -27.3768358
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 14.6,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 67.7,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7edNXsMzEzjfoqOXVGRZdhifhHFOZ6hU0f244vLiI99ozfxgI",
+      "sunAzimuth": 32.3,
+      "sunElevation": 35.8
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.51,
+          "bitDepth": 16,
+          "crsOriginX": 17033150.946040392,
+          "crsOriginY": -3157307.8903474906,
+          "gsd": 0.511,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5747144983847838,
+          "pixelSizeY": -0.5747144983847838
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.51,
+          "bitDepth": 16,
+          "crsOriginX": 17033150.946040392,
+          "crsOriginY": -3157307.8903474906,
+          "gsd": 0.511,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5747144983847838,
+          "pixelSizeY": -0.5747144983847838
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.51,
+          "bitDepth": 16,
+          "crsOriginX": 17033150.946040392,
+          "crsOriginY": -3157307.8903474906,
+          "gsd": 0.511,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5747144983847838,
+          "pixelSizeY": -0.5747144983847838
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.51,
+          "bitDepth": 16,
+          "crsOriginX": 17033150.946040392,
+          "crsOriginY": -3157307.8903474906,
+          "gsd": 0.511,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5747144983847838,
+          "pixelSizeY": -0.5747144983847838
+        }
+      ],
+      "cloudCover": 0.0,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-05-19 23:54:08",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.0115827,
+                -27.2756847
+              ],
+              [
+                153.1806643,
+                -27.270686
+              ],
+              [
+                153.1801317,
+                -27.4052956
+              ],
+              [
+                153.0118355,
+                -27.409615
+              ],
+              [
+                153.0115827,
+                -27.2756847
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 15.1,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 66.4,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7fc6zL821fCsvO0T3w2JtCse_clOvDPnMrkmyWRU4P2ihUwpY",
+      "sunAzimuth": 32.4,
+      "sunElevation": 35.9
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.6,
+          "approximateResolutionY": 0.6,
+          "bitDepth": 16,
+          "crsOriginX": 17026042.30240987,
+          "crsOriginY": -3165257.3412891487,
+          "gsd": 0.602,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.6764338786298784,
+          "pixelSizeY": -0.6764338786298784
+        },
+        {
+          "approximateResolutionX": 0.6,
+          "approximateResolutionY": 0.6,
+          "bitDepth": 16,
+          "crsOriginX": 17026042.30240987,
+          "crsOriginY": -3165257.3412891487,
+          "gsd": 0.602,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.6764338786298784,
+          "pixelSizeY": -0.6764338786298784
+        },
+        {
+          "approximateResolutionX": 0.6,
+          "approximateResolutionY": 0.6,
+          "bitDepth": 16,
+          "crsOriginX": 17026042.30240987,
+          "crsOriginY": -3165257.3412891487,
+          "gsd": 0.602,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.6764338786298784,
+          "pixelSizeY": -0.6764338786298784
+        },
+        {
+          "approximateResolutionX": 0.6,
+          "approximateResolutionY": 0.6,
+          "bitDepth": 16,
+          "crsOriginX": 17026042.30240987,
+          "crsOriginY": -3165257.3412891487,
+          "gsd": 0.602,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.6764338786298784,
+          "pixelSizeY": -0.6764338786298784
+        },
+        {
+          "approximateResolutionX": 0.6,
+          "approximateResolutionY": 0.6,
+          "bitDepth": 16,
+          "crsOriginX": 17026042.30240987,
+          "crsOriginY": -3165257.3412891487,
+          "gsd": 0.602,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.6764338786298784,
+          "pixelSizeY": -0.6764338786298784
+        },
+        {
+          "approximateResolutionX": 0.6,
+          "approximateResolutionY": 0.6,
+          "bitDepth": 16,
+          "crsOriginX": 17026042.30240987,
+          "crsOriginY": -3165257.3412891487,
+          "gsd": 0.602,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.6764338786298784,
+          "pixelSizeY": -0.6764338786298784
+        },
+        {
+          "approximateResolutionX": 0.6,
+          "approximateResolutionY": 0.6,
+          "bitDepth": 16,
+          "crsOriginX": 17026042.30240987,
+          "crsOriginY": -3165257.3412891487,
+          "gsd": 0.602,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.6764338786298784,
+          "pixelSizeY": -0.6764338786298784
+        },
+        {
+          "approximateResolutionX": 0.6,
+          "approximateResolutionY": 0.6,
+          "bitDepth": 16,
+          "crsOriginX": 17026042.30240987,
+          "crsOriginY": -3165257.3412891487,
+          "gsd": 0.602,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.6764338786298784,
+          "pixelSizeY": -0.6764338786298784
+        }
+      ],
+      "cloudCover": 0.0,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-05-05 23:56:04",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.1548259,
+                -27.4945926
+              ],
+              [
+                152.9495891,
+                -27.4649938
+              ],
+              [
+                152.9486426,
+                -27.3349421
+              ],
+              [
+                153.1551073,
+                -27.3660979
+              ],
+              [
+                153.1548259,
+                -27.4945926
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 29.1,
+      "provider": "gbdx",
+      "satellite": "WV02",
+      "satelliteAzimuth": 148.2,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7KQyel30e6pj6rCUo3GpaBXL_5jVMz-CBk2VZ3_QPd1CJypTx",
+      "sunAzimuth": 34.2,
+      "sunElevation": 39.0
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.49,
+          "bitDepth": 16,
+          "crsOriginX": 17023825.6285896,
+          "crsOriginY": -3165563.0894022896,
+          "gsd": 0.491,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.5499066783106206,
+          "pixelSizeY": -0.5499066783106206
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.49,
+          "bitDepth": 16,
+          "crsOriginX": 17023825.6285896,
+          "crsOriginY": -3165563.0894022896,
+          "gsd": 0.491,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5499066783106206,
+          "pixelSizeY": -0.5499066783106206
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.49,
+          "bitDepth": 16,
+          "crsOriginX": 17023825.6285896,
+          "crsOriginY": -3165563.0894022896,
+          "gsd": 0.491,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5499066783106206,
+          "pixelSizeY": -0.5499066783106206
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.49,
+          "bitDepth": 16,
+          "crsOriginX": 17023825.6285896,
+          "crsOriginY": -3165563.0894022896,
+          "gsd": 0.491,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.5499066783106206,
+          "pixelSizeY": -0.5499066783106206
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.49,
+          "bitDepth": 16,
+          "crsOriginX": 17023825.6285896,
+          "crsOriginY": -3165563.0894022896,
+          "gsd": 0.491,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5499066783106206,
+          "pixelSizeY": -0.5499066783106206
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.49,
+          "bitDepth": 16,
+          "crsOriginX": 17023825.6285896,
+          "crsOriginY": -3165563.0894022896,
+          "gsd": 0.491,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.5499066783106206,
+          "pixelSizeY": -0.5499066783106206
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.49,
+          "bitDepth": 16,
+          "crsOriginX": 17023825.6285896,
+          "crsOriginY": -3165563.0894022896,
+          "gsd": 0.491,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.5499066783106206,
+          "pixelSizeY": -0.5499066783106206
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.49,
+          "bitDepth": 16,
+          "crsOriginX": 17023825.6285896,
+          "crsOriginY": -3165563.0894022896,
+          "gsd": 0.491,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.5499066783106206,
+          "pixelSizeY": -0.5499066783106206
+        }
+      ],
+      "cloudCover": 0.0,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-04-30 00:15:29",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.1055464,
+                -27.4593136
+              ],
+              [
+                152.928271,
+                -27.4544076
+              ],
+              [
+                152.928612,
+                -27.3365968
+              ],
+              [
+                153.1052921,
+                -27.3403699
+              ],
+              [
+                153.1055464,
+                -27.4593136
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 13.0,
+      "provider": "gbdx",
+      "satellite": "WV02",
+      "satelliteAzimuth": 297.5,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7eJqnAQAa1gwNH0-NVsfdNCnIkOPA3C6XMpkpxt2tRqruUAq2",
+      "sunAzimuth": 30.2,
+      "sunElevation": 42.8
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17032998.07198382,
+          "crsOriginY": -3169614.2519014035,
+          "gsd": 0.506,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17032998.07198382,
+          "crsOriginY": -3169614.2519014035,
+          "gsd": 0.506,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17032998.07198382,
+          "crsOriginY": -3169614.2519014035,
+          "gsd": 0.506,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17032998.07198382,
+          "crsOriginY": -3169614.2519014035,
+          "gsd": 0.506,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        }
+      ],
+      "cloudCover": 0.0,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-04-23 00:05:25",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.0109494,
+                -27.3761165
+              ],
+              [
+                153.1805943,
+                -27.3691689
+              ],
+              [
+                153.1811905,
+                -27.5117002
+              ],
+              [
+                153.0104766,
+                -27.5192512
+              ],
+              [
+                153.0109494,
+                -27.3761165
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 15.9,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 228.7,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7d2Pas3eKULX8_of46AUtdHly-cwo9JA8szLg8Nit9MEbUlwO",
+      "sunAzimuth": 34.8,
+      "sunElevation": 43.4
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033074.509012107,
+          "crsOriginY": -3157078.5792626347,
+          "gsd": 0.506,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033074.509012107,
+          "crsOriginY": -3157078.5792626347,
+          "gsd": 0.506,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033074.509012107,
+          "crsOriginY": -3157078.5792626347,
+          "gsd": 0.506,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033074.509012107,
+          "crsOriginY": -3157078.5792626347,
+          "gsd": 0.506,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        }
+      ],
+      "cloudCover": 0.0,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-04-23 00:05:22",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.0114224,
+                -27.2753617
+              ],
+              [
+                153.1801863,
+                -27.268953
+              ],
+              [
+                153.1807464,
+                -27.4018067
+              ],
+              [
+                153.0108499,
+                -27.4088902
+              ],
+              [
+                153.0114224,
+                -27.2753617
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 15.4,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 229.3,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7LvvDY43Li2RdDcHmeODJNRc16si-xe_EcXQG3R69pz3YzL4B",
+      "sunAzimuth": 34.9,
+      "sunElevation": 43.5
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033456.694153532,
+          "crsOriginY": -3169996.4370428296,
+          "gsd": 0.505,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033456.694153532,
+          "crsOriginY": -3169996.4370428296,
+          "gsd": 0.505,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033456.694153532,
+          "crsOriginY": -3169996.4370428296,
+          "gsd": 0.505,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033456.694153532,
+          "crsOriginY": -3169996.4370428296,
+          "gsd": 0.505,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        }
+      ],
+      "cloudCover": 0.19,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-04-19 23:55:40",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.0144014,
+                -27.3719979
+              ],
+              [
+                153.1789205,
+                -27.3762127
+              ],
+              [
+                153.1790868,
+                -27.5190656
+              ],
+              [
+                153.0142437,
+                -27.5147555
+              ],
+              [
+                153.0144014,
+                -27.3719979
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 13.0,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 146.9,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7eyGRz2BYeH4W5K3DVAXzYKCPHJYsMk0aN69WpquEr9MxcRL8",
+      "sunAzimuth": 38.5,
+      "sunElevation": 42.9
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033456.694153532,
+          "crsOriginY": -3157384.3273757757,
+          "gsd": 0.504,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033456.694153532,
+          "crsOriginY": -3157384.3273757757,
+          "gsd": 0.504,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033456.694153532,
+          "crsOriginY": -3157384.3273757757,
+          "gsd": 0.504,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17033456.694153532,
+          "crsOriginY": -3157384.3273757757,
+          "gsd": 0.504,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5662002095198241,
+          "pixelSizeY": -0.5662002095198241
+        }
+      ],
+      "cloudCover": 0.22,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-04-19 23:55:38",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.0144178,
+                -27.271275
+              ],
+              [
+                153.1788373,
+                -27.2755261
+              ],
+              [
+                153.1789544,
+                -27.4089376
+              ],
+              [
+                153.0143785,
+                -27.4047209
+              ],
+              [
+                153.0144178,
+                -27.271275
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 12.8,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 144.6,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7eyck01o6uJ-dbyhsF0cuKIuwRoEes1CvMnSBw_8MR2IEdVV2",
+      "sunAzimuth": 38.6,
+      "sunElevation": 42.9
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.51,
+          "bitDepth": 16,
+          "crsOriginX": 17032004.390616115,
+          "crsOriginY": -3167321.1410528487,
+          "gsd": 0.518,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5790683960998201,
+          "pixelSizeY": -0.5790683960998201
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.51,
+          "bitDepth": 16,
+          "crsOriginX": 17032004.390616115,
+          "crsOriginY": -3167321.1410528487,
+          "gsd": 0.518,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5790683960998201,
+          "pixelSizeY": -0.5790683960998201
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.51,
+          "bitDepth": 16,
+          "crsOriginX": 17032004.390616115,
+          "crsOriginY": -3167321.1410528487,
+          "gsd": 0.518,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5790683960998201,
+          "pixelSizeY": -0.5790683960998201
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.51,
+          "bitDepth": 16,
+          "crsOriginX": 17032004.390616115,
+          "crsOriginY": -3167321.1410528487,
+          "gsd": 0.518,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5790683960998201,
+          "pixelSizeY": -0.5790683960998201
+        }
+      ],
+      "cloudCover": 0.27,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-04-19 23:54:33",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.0015749,
+                -27.3749936
+              ],
+              [
+                153.191243,
+                -27.3505524
+              ],
+              [
+                153.190827,
+                -27.4937516
+              ],
+              [
+                153.0018821,
+                -27.5174378
+              ],
+              [
+                153.0015749,
+                -27.3749936
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 27.3,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 31.7,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7fZtYB4cCfIXENI_gTC4cIFJsWz1XLT_5AZ0juR7oG-zKtl3R",
+      "sunAzimuth": 38.8,
+      "sunElevation": 42.7
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.52,
+          "approximateResolutionY": 0.52,
+          "bitDepth": 16,
+          "crsOriginX": 17032004.390616115,
+          "crsOriginY": -3154479.720300939,
+          "gsd": 0.519,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5834887655356966,
+          "pixelSizeY": -0.5834887655356966
+        },
+        {
+          "approximateResolutionX": 0.52,
+          "approximateResolutionY": 0.52,
+          "bitDepth": 16,
+          "crsOriginX": 17032004.390616115,
+          "crsOriginY": -3154479.720300939,
+          "gsd": 0.519,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5834887655356966,
+          "pixelSizeY": -0.5834887655356966
+        },
+        {
+          "approximateResolutionX": 0.52,
+          "approximateResolutionY": 0.52,
+          "bitDepth": 16,
+          "crsOriginX": 17032004.390616115,
+          "crsOriginY": -3154479.720300939,
+          "gsd": 0.519,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5834887655356966,
+          "pixelSizeY": -0.5834887655356966
+        },
+        {
+          "approximateResolutionX": 0.52,
+          "approximateResolutionY": 0.52,
+          "bitDepth": 16,
+          "crsOriginX": 17032004.390616115,
+          "crsOriginY": -3154479.720300939,
+          "gsd": 0.519,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5834887655356966,
+          "pixelSizeY": -0.5834887655356966
+        }
+      ],
+      "cloudCover": 0.32,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-04-19 23:54:31",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.001113,
+                -27.2738363
+              ],
+              [
+                153.1915649,
+                -27.2485047
+              ],
+              [
+                153.1911552,
+                -27.3832484
+              ],
+              [
+                153.0016453,
+                -27.4075077
+              ],
+              [
+                153.001113,
+                -27.2738363
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 27.5,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 31.9,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7fnJ-AvstglkswAoyl1zbqhClVfa7ucxvHna69bwo0hTFAv6b",
+      "sunAzimuth": 38.9,
+      "sunElevation": 42.8
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17038042.915850643,
+          "crsOriginY": -3165945.274543715,
+          "gsd": 0.507,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5704255842177333,
+          "pixelSizeY": -0.5704255842177333
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17038042.915850643,
+          "crsOriginY": -3165945.274543715,
+          "gsd": 0.507,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5704255842177333,
+          "pixelSizeY": -0.5704255842177333
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17038042.915850643,
+          "crsOriginY": -3165945.274543715,
+          "gsd": 0.507,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5704255842177333,
+          "pixelSizeY": -0.5704255842177333
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17038042.915850643,
+          "crsOriginY": -3165945.274543715,
+          "gsd": 0.507,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5704255842177333,
+          "pixelSizeY": -0.5704255842177333
+        }
+      ],
+      "cloudCover": 0.4,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-03-28 23:49:52",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.055719,
+                -27.3396346
+              ],
+              [
+                153.2369538,
+                -27.3545388
+              ],
+              [
+                153.236805,
+                -27.4820003
+              ],
+              [
+                153.055728,
+                -27.466941
+              ],
+              [
+                153.055719,
+                -27.3396346
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 22.0,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 132.4,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7LqiJZArC1aGCohB1haCpoThPLyu7mHyVRgwz7nikCR-U_wMb",
+      "sunAzimuth": 48.9,
+      "sunElevation": 47.5
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17029940.590852413,
+          "crsOriginY": -3162199.8601577417,
+          "gsd": 0.51,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5704255842177333,
+          "pixelSizeY": -0.5704255842177333
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17029940.590852413,
+          "crsOriginY": -3162199.8601577417,
+          "gsd": 0.51,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5704255842177333,
+          "pixelSizeY": -0.5704255842177333
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17029940.590852413,
+          "crsOriginY": -3162199.8601577417,
+          "gsd": 0.51,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5704255842177333,
+          "pixelSizeY": -0.5704255842177333
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17029940.590852413,
+          "crsOriginY": -3162199.8601577417,
+          "gsd": 0.51,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5704255842177333,
+          "pixelSizeY": -0.5704255842177333
+        }
+      ],
+      "cloudCover": 0.2,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-03-24 00:06:06",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                152.9836041,
+                -27.3134921
+              ],
+              [
+                153.1511958,
+                -27.3098467
+              ],
+              [
+                153.1517508,
+                -27.4520269
+              ],
+              [
+                152.9830262,
+                -27.4563345
+              ],
+              [
+                152.9836041,
+                -27.3134921
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 14.2,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 247.4,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7KQ92PPpx5snAG2oW6vbT94MgCLqa0AgwE4ZFuS-_2Q9y8bXQ",
+      "sunAzimuth": 46.7,
+      "sunElevation": 51.4
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.4,
+          "approximateResolutionY": 0.4,
+          "bitDepth": 16,
+          "crsOriginX": 17030322.77599384,
+          "crsOriginY": -3165868.83751543,
+          "gsd": 0.402,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.4522901081963092,
+          "pixelSizeY": -0.4522901081963092
+        },
+        {
+          "approximateResolutionX": 0.4,
+          "approximateResolutionY": 0.4,
+          "bitDepth": 16,
+          "crsOriginX": 17030322.77599384,
+          "crsOriginY": -3165868.83751543,
+          "gsd": 0.402,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.4522901081963092,
+          "pixelSizeY": -0.4522901081963092
+        },
+        {
+          "approximateResolutionX": 0.4,
+          "approximateResolutionY": 0.4,
+          "bitDepth": 16,
+          "crsOriginX": 17030322.77599384,
+          "crsOriginY": -3165868.83751543,
+          "gsd": 0.402,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.4522901081963092,
+          "pixelSizeY": -0.4522901081963092
+        },
+        {
+          "approximateResolutionX": 0.4,
+          "approximateResolutionY": 0.4,
+          "bitDepth": 16,
+          "crsOriginX": 17030322.77599384,
+          "crsOriginY": -3165868.83751543,
+          "gsd": 0.402,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.4522901081963092,
+          "pixelSizeY": -0.4522901081963092
+        },
+        {
+          "approximateResolutionX": 0.4,
+          "approximateResolutionY": 0.4,
+          "bitDepth": 16,
+          "crsOriginX": 17030322.77599384,
+          "crsOriginY": -3165868.83751543,
+          "gsd": 0.402,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.4522901081963092,
+          "pixelSizeY": -0.4522901081963092
+        },
+        {
+          "approximateResolutionX": 0.4,
+          "approximateResolutionY": 0.4,
+          "bitDepth": 16,
+          "crsOriginX": 17030322.77599384,
+          "crsOriginY": -3165868.83751543,
+          "gsd": 0.402,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.4522901081963092,
+          "pixelSizeY": -0.4522901081963092
+        },
+        {
+          "approximateResolutionX": 0.4,
+          "approximateResolutionY": 0.4,
+          "bitDepth": 16,
+          "crsOriginX": 17030322.77599384,
+          "crsOriginY": -3165868.83751543,
+          "gsd": 0.402,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.4522901081963092,
+          "pixelSizeY": -0.4522901081963092
+        },
+        {
+          "approximateResolutionX": 0.4,
+          "approximateResolutionY": 0.4,
+          "bitDepth": 16,
+          "crsOriginX": 17030322.77599384,
+          "crsOriginY": -3165868.83751543,
+          "gsd": 0.402,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.4522901081963092,
+          "pixelSizeY": -0.4522901081963092
+        }
+      ],
+      "cloudCover": 0.03,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-03-17 00:13:10",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.1538937,
+                -27.4928022
+              ],
+              [
+                152.9867178,
+                -27.467334
+              ],
+              [
+                152.9863927,
+                -27.339166
+              ],
+              [
+                153.1540864,
+                -27.3652324
+              ],
+              [
+                153.1538937,
+                -27.4928022
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 29.9,
+      "provider": "gbdx",
+      "satellite": "WV03_VNIR",
+      "satelliteAzimuth": 145.8,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7fIv_2mJZCOYXStoMrWCxClNFo96Gaydy9SKRPtWykT8B8uUh",
+      "sunAzimuth": 48.1,
+      "sunElevation": 54.3
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.38,
+          "approximateResolutionY": 0.37,
+          "bitDepth": 16,
+          "crsOriginX": 17030093.464908984,
+          "crsOriginY": -3167932.63727913,
+          "gsd": 0.376,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.4223040236750069,
+          "pixelSizeY": -0.4223040236750069
+        },
+        {
+          "approximateResolutionX": 0.38,
+          "approximateResolutionY": 0.37,
+          "bitDepth": 16,
+          "crsOriginX": 17030093.464908984,
+          "crsOriginY": -3167932.63727913,
+          "gsd": 0.376,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.4223040236750069,
+          "pixelSizeY": -0.4223040236750069
+        },
+        {
+          "approximateResolutionX": 0.38,
+          "approximateResolutionY": 0.37,
+          "bitDepth": 16,
+          "crsOriginX": 17030093.464908984,
+          "crsOriginY": -3167932.63727913,
+          "gsd": 0.376,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.4223040236750069,
+          "pixelSizeY": -0.4223040236750069
+        },
+        {
+          "approximateResolutionX": 0.38,
+          "approximateResolutionY": 0.37,
+          "bitDepth": 16,
+          "crsOriginX": 17030093.464908984,
+          "crsOriginY": -3167932.63727913,
+          "gsd": 0.376,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.4223040236750069,
+          "pixelSizeY": -0.4223040236750069
+        },
+        {
+          "approximateResolutionX": 0.38,
+          "approximateResolutionY": 0.37,
+          "bitDepth": 16,
+          "crsOriginX": 17030093.464908984,
+          "crsOriginY": -3167932.63727913,
+          "gsd": 0.376,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.4223040236750069,
+          "pixelSizeY": -0.4223040236750069
+        },
+        {
+          "approximateResolutionX": 0.38,
+          "approximateResolutionY": 0.37,
+          "bitDepth": 16,
+          "crsOriginX": 17030093.464908984,
+          "crsOriginY": -3167932.63727913,
+          "gsd": 0.376,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.4223040236750069,
+          "pixelSizeY": -0.4223040236750069
+        },
+        {
+          "approximateResolutionX": 0.38,
+          "approximateResolutionY": 0.37,
+          "bitDepth": 16,
+          "crsOriginX": 17030093.464908984,
+          "crsOriginY": -3167932.63727913,
+          "gsd": 0.376,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.4223040236750069,
+          "pixelSizeY": -0.4223040236750069
+        },
+        {
+          "approximateResolutionX": 0.38,
+          "approximateResolutionY": 0.37,
+          "bitDepth": 16,
+          "crsOriginX": 17030093.464908984,
+          "crsOriginY": -3167932.63727913,
+          "gsd": 0.376,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.4223040236750069,
+          "pixelSizeY": -0.4223040236750069
+        }
+      ],
+      "cloudCover": 0.05,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-03-17 00:12:13",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.1553356,
+                -27.4829576
+              ],
+              [
+                152.9844861,
+                -27.4931118
+              ],
+              [
+                152.984313,
+                -27.3656212
+              ],
+              [
+                153.1554943,
+                -27.3554915
+              ],
+              [
+                153.1553356,
+                -27.4829576
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 26.1,
+      "provider": "gbdx",
+      "satellite": "WV03_VNIR",
+      "satelliteAzimuth": 72.9,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7fIuiWeB5szvZkrjOEzuy0InrF6H9wzgabPQfy8FbOGGLE5jS",
+      "sunAzimuth": 48.4,
+      "sunElevation": 54.1
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17036896.360426366,
+          "crsOriginY": -3166480.3337417115,
+          "gsd": 0.538,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.6042452828867688,
+          "pixelSizeY": -0.6042452828867688
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17036896.360426366,
+          "crsOriginY": -3166480.3337417115,
+          "gsd": 0.538,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.6042452828867688,
+          "pixelSizeY": -0.6042452828867688
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17036896.360426366,
+          "crsOriginY": -3166480.3337417115,
+          "gsd": 0.538,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.6042452828867688,
+          "pixelSizeY": -0.6042452828867688
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17036896.360426366,
+          "crsOriginY": -3166480.3337417115,
+          "gsd": 0.538,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.6042452828867688,
+          "pixelSizeY": -0.6042452828867688
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17036896.360426366,
+          "crsOriginY": -3166480.3337417115,
+          "gsd": 0.538,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.6042452828867688,
+          "pixelSizeY": -0.6042452828867688
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17036896.360426366,
+          "crsOriginY": -3166480.3337417115,
+          "gsd": 0.538,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.6042452828867688,
+          "pixelSizeY": -0.6042452828867688
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17036896.360426366,
+          "crsOriginY": -3166480.3337417115,
+          "gsd": 0.538,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.6042452828867688,
+          "pixelSizeY": -0.6042452828867688
+        },
+        {
+          "approximateResolutionX": 0.54,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17036896.360426366,
+          "crsOriginY": -3166480.3337417115,
+          "gsd": 0.538,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.6042452828867688,
+          "pixelSizeY": -0.6042452828867688
+        }
+      ],
+      "cloudCover": 1.0,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-02-26 23:54:53",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.2455523,
+                -27.4708248
+              ],
+              [
+                153.0462444,
+                -27.4621649
+              ],
+              [
+                153.046081,
+                -27.3443271
+              ],
+              [
+                153.2457512,
+                -27.3535153
+              ],
+              [
+                153.2455523,
+                -27.4708248
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 22.0,
+      "provider": "gbdx",
+      "satellite": "WV02",
+      "satelliteAzimuth": 107.0,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7fNZJTX38ZWnN-Yj1c8lyCW1A06H7V0YFAZvCLQ-2lw281mIJ",
+      "sunAzimuth": 63.5,
+      "sunElevation": 54.9
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17027876.791088715,
+          "crsOriginY": -3167091.829967993,
+          "gsd": 0.488,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.5459787734655447,
+          "pixelSizeY": -0.5459787734655447
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17027876.791088715,
+          "crsOriginY": -3167091.829967993,
+          "gsd": 0.488,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5459787734655447,
+          "pixelSizeY": -0.5459787734655447
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17027876.791088715,
+          "crsOriginY": -3167091.829967993,
+          "gsd": 0.488,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5459787734655447,
+          "pixelSizeY": -0.5459787734655447
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17027876.791088715,
+          "crsOriginY": -3167091.829967993,
+          "gsd": 0.488,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.5459787734655447,
+          "pixelSizeY": -0.5459787734655447
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17027876.791088715,
+          "crsOriginY": -3167091.829967993,
+          "gsd": 0.488,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5459787734655447,
+          "pixelSizeY": -0.5459787734655447
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17027876.791088715,
+          "crsOriginY": -3167091.829967993,
+          "gsd": 0.488,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.5459787734655447,
+          "pixelSizeY": -0.5459787734655447
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17027876.791088715,
+          "crsOriginY": -3167091.829967993,
+          "gsd": 0.488,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.5459787734655447,
+          "pixelSizeY": -0.5459787734655447
+        },
+        {
+          "approximateResolutionX": 0.49,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17027876.791088715,
+          "crsOriginY": -3167091.829967993,
+          "gsd": 0.488,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.5459787734655447,
+          "pixelSizeY": -0.5459787734655447
+        }
+      ],
+      "cloudCover": 0.99,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-02-24 00:05:21",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.1367538,
+                -27.4794425
+              ],
+              [
+                152.964712,
+                -27.4775927
+              ],
+              [
+                152.9646038,
+                -27.3491202
+              ],
+              [
+                153.1367989,
+                -27.351333
+              ],
+              [
+                153.1367538,
+                -27.4794425
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 12.0,
+      "provider": "gbdx",
+      "satellite": "WV02",
+      "satelliteAzimuth": 164.7,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7fZtXZx-Lb0N5f13-6rLWR3aiVimiSmy8qpvXfnMatYDAKtDE",
+      "sunAzimuth": 62.6,
+      "sunElevation": 57.5
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.52,
+          "approximateResolutionY": 0.52,
+          "bitDepth": 16,
+          "crsOriginX": 17041100.39698205,
+          "crsOriginY": -3167550.452137704,
+          "gsd": 0.522,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5834887655356966,
+          "pixelSizeY": -0.5834887655356966
+        },
+        {
+          "approximateResolutionX": 0.52,
+          "approximateResolutionY": 0.52,
+          "bitDepth": 16,
+          "crsOriginX": 17041100.39698205,
+          "crsOriginY": -3167550.452137704,
+          "gsd": 0.522,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5834887655356966,
+          "pixelSizeY": -0.5834887655356966
+        },
+        {
+          "approximateResolutionX": 0.52,
+          "approximateResolutionY": 0.52,
+          "bitDepth": 16,
+          "crsOriginX": 17041100.39698205,
+          "crsOriginY": -3167550.452137704,
+          "gsd": 0.522,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5834887655356966,
+          "pixelSizeY": -0.5834887655356966
+        },
+        {
+          "approximateResolutionX": 0.52,
+          "approximateResolutionY": 0.52,
+          "bitDepth": 16,
+          "crsOriginX": 17041100.39698205,
+          "crsOriginY": -3167550.452137704,
+          "gsd": 0.522,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5834887655356966,
+          "pixelSizeY": -0.5834887655356966
+        }
+      ],
+      "cloudCover": 0.01,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-02-18 23:57:09",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.0835221,
+                -27.3525568
+              ],
+              [
+                153.2505789,
+                -27.354589
+              ],
+              [
+                153.2509257,
+                -27.4716504
+              ],
+              [
+                153.0832866,
+                -27.4700453
+              ],
+              [
+                153.0835221,
+                -27.3525568
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 20.6,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 176.0,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7fnMQllHBV33nZtsO87VbgV6z6B6ZzKORbjMn5pZr2bDvAwo2",
+      "sunAzimuth": 67.5,
+      "sunElevation": 56.9
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17030628.52410698,
+          "crsOriginY": -3162658.482327453,
+          "gsd": 0.502,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5620369726851195,
+          "pixelSizeY": -0.5620369726851195
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17030628.52410698,
+          "crsOriginY": -3162658.482327453,
+          "gsd": 0.502,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5620369726851195,
+          "pixelSizeY": -0.5620369726851195
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17030628.52410698,
+          "crsOriginY": -3162658.482327453,
+          "gsd": 0.502,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5620369726851195,
+          "pixelSizeY": -0.5620369726851195
+        },
+        {
+          "approximateResolutionX": 0.5,
+          "approximateResolutionY": 0.5,
+          "bitDepth": 16,
+          "crsOriginX": 17030628.52410698,
+          "crsOriginY": -3162658.482327453,
+          "gsd": 0.502,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5620369726851195,
+          "pixelSizeY": -0.5620369726851195
+        }
+      ],
+      "cloudCover": 0.02,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-02-18 23:56:36",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                152.9890929,
+                -27.3135699
+              ],
+              [
+                153.1470609,
+                -27.3146452
+              ],
+              [
+                153.1471131,
+                -27.457586
+              ],
+              [
+                152.9891573,
+                -27.4563364
+              ],
+              [
+                152.9890929,
+                -27.3135699
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 7.4,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 118.1,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7fnsqIjQ8xRzjq9S2kgUg6ogLyVO826ccyuqdi6e9OxcpXJtV",
+      "sunAzimuth": 67.7,
+      "sunElevation": 56.7
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.53,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17025277.932127018,
+          "crsOriginY": -3162811.356384023,
+          "gsd": 0.535,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.6018663644502067,
+          "pixelSizeY": -0.6018663644502067
+        },
+        {
+          "approximateResolutionX": 0.53,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17025277.932127018,
+          "crsOriginY": -3162811.356384023,
+          "gsd": 0.535,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.6018663644502067,
+          "pixelSizeY": -0.6018663644502067
+        },
+        {
+          "approximateResolutionX": 0.53,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17025277.932127018,
+          "crsOriginY": -3162811.356384023,
+          "gsd": 0.535,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.6018663644502067,
+          "pixelSizeY": -0.6018663644502067
+        },
+        {
+          "approximateResolutionX": 0.53,
+          "approximateResolutionY": 0.53,
+          "bitDepth": 16,
+          "crsOriginX": 17025277.932127018,
+          "crsOriginY": -3162811.356384023,
+          "gsd": 0.535,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.6018663644502067,
+          "pixelSizeY": -0.6018663644502067
+        }
+      ],
+      "cloudCover": 0.31,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-02-15 23:46:48",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                152.9412404,
+                -27.3155239
+              ],
+              [
+                153.1389398,
+                -27.3178073
+              ],
+              [
+                153.138419,
+                -27.4611982
+              ],
+              [
+                152.9421707,
+                -27.4581223
+              ],
+              [
+                152.9412404,
+                -27.3155239
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 25.3,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 93.9,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7LVpRMFFpTszz4inNDi_d5awp6zydS0kKyjxhUwE1a-XVDCyy",
+      "sunAzimuth": 71.6,
+      "sunElevation": 55.1
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036361.301228367,
+          "crsOriginY": -3168697.0075619817,
+          "gsd": 0.48,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036361.301228367,
+          "crsOriginY": -3168697.0075619817,
+          "gsd": 0.48,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036361.301228367,
+          "crsOriginY": -3168697.0075619817,
+          "gsd": 0.48,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036361.301228367,
+          "crsOriginY": -3168697.0075619817,
+          "gsd": 0.48,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036361.301228367,
+          "crsOriginY": -3168697.0075619817,
+          "gsd": 0.48,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036361.301228367,
+          "crsOriginY": -3168697.0075619817,
+          "gsd": 0.48,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036361.301228367,
+          "crsOriginY": -3168697.0075619817,
+          "gsd": 0.48,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036361.301228367,
+          "crsOriginY": -3168697.0075619817,
+          "gsd": 0.48,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        }
+      ],
+      "cloudCover": 0.65,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-02-13 00:09:31",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.2113165,
+                -27.4904427
+              ],
+              [
+                153.0407927,
+                -27.4922817
+              ],
+              [
+                153.0408596,
+                -27.3638512
+              ],
+              [
+                153.2112523,
+                -27.3619704
+              ],
+              [
+                153.2113165,
+                -27.4904427
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 8.7,
+      "provider": "gbdx",
+      "satellite": "WV02",
+      "satelliteAzimuth": 209.7,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7LPV1RSILLMiH9uAk9V7YX3srZme62BQud7O30LIJJapxkCn6",
+      "sunAzimuth": 67.8,
+      "sunElevation": 60.4
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.58,
+          "approximateResolutionY": 0.58,
+          "bitDepth": 16,
+          "crsOriginX": 17023596.317504745,
+          "crsOriginY": -3160671.119592038,
+          "gsd": 0.58,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.6505279002993724,
+          "pixelSizeY": -0.6505279002993724
+        },
+        {
+          "approximateResolutionX": 0.58,
+          "approximateResolutionY": 0.58,
+          "bitDepth": 16,
+          "crsOriginX": 17023596.317504745,
+          "crsOriginY": -3160671.119592038,
+          "gsd": 0.58,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.6505279002993724,
+          "pixelSizeY": -0.6505279002993724
+        },
+        {
+          "approximateResolutionX": 0.58,
+          "approximateResolutionY": 0.58,
+          "bitDepth": 16,
+          "crsOriginX": 17023596.317504745,
+          "crsOriginY": -3160671.119592038,
+          "gsd": 0.58,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.6505279002993724,
+          "pixelSizeY": -0.6505279002993724
+        },
+        {
+          "approximateResolutionX": 0.58,
+          "approximateResolutionY": 0.58,
+          "bitDepth": 16,
+          "crsOriginX": 17023596.317504745,
+          "crsOriginY": -3160671.119592038,
+          "gsd": 0.58,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.6505279002993724,
+          "pixelSizeY": -0.6505279002993724
+        },
+        {
+          "approximateResolutionX": 0.58,
+          "approximateResolutionY": 0.58,
+          "bitDepth": 16,
+          "crsOriginX": 17023596.317504745,
+          "crsOriginY": -3160671.119592038,
+          "gsd": 0.58,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.6505279002993724,
+          "pixelSizeY": -0.6505279002993724
+        },
+        {
+          "approximateResolutionX": 0.58,
+          "approximateResolutionY": 0.58,
+          "bitDepth": 16,
+          "crsOriginX": 17023596.317504745,
+          "crsOriginY": -3160671.119592038,
+          "gsd": 0.58,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.6505279002993724,
+          "pixelSizeY": -0.6505279002993724
+        },
+        {
+          "approximateResolutionX": 0.58,
+          "approximateResolutionY": 0.58,
+          "bitDepth": 16,
+          "crsOriginX": 17023596.317504745,
+          "crsOriginY": -3160671.119592038,
+          "gsd": 0.58,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.6505279002993724,
+          "pixelSizeY": -0.6505279002993724
+        },
+        {
+          "approximateResolutionX": 0.58,
+          "approximateResolutionY": 0.58,
+          "bitDepth": 16,
+          "crsOriginX": 17023596.317504745,
+          "crsOriginY": -3160671.119592038,
+          "gsd": 0.58,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.6505279002993724,
+          "pixelSizeY": -0.6505279002993724
+        }
+      ],
+      "cloudCover": 0.99,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-02-07 23:52:46",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.1484497,
+                -27.4264169
+              ],
+              [
+                152.927205,
+                -27.4365019
+              ],
+              [
+                152.9268667,
+                -27.3080275
+              ],
+              [
+                153.1485177,
+                -27.2985616
+              ],
+              [
+                153.1484497,
+                -27.4264169
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 27.2,
+      "provider": "gbdx",
+      "satellite": "WV02",
+      "satelliteAzimuth": 79.0,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7e3HhXxzbCfJ0QcEbia4E4k25pD3zpdRTuLfFeZU6qVwjrX3g",
+      "sunAzimuth": 74.6,
+      "sunElevation": 57.6
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17033991.75335153,
+          "crsOriginY": -3159983.1863374715,
+          "gsd": 0.482,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.5421065835828103,
+          "pixelSizeY": -0.5421065835828103
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17033991.75335153,
+          "crsOriginY": -3159983.1863374715,
+          "gsd": 0.482,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5421065835828103,
+          "pixelSizeY": -0.5421065835828103
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17033991.75335153,
+          "crsOriginY": -3159983.1863374715,
+          "gsd": 0.482,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5421065835828103,
+          "pixelSizeY": -0.5421065835828103
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17033991.75335153,
+          "crsOriginY": -3159983.1863374715,
+          "gsd": 0.482,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.5421065835828103,
+          "pixelSizeY": -0.5421065835828103
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17033991.75335153,
+          "crsOriginY": -3159983.1863374715,
+          "gsd": 0.482,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5421065835828103,
+          "pixelSizeY": -0.5421065835828103
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17033991.75335153,
+          "crsOriginY": -3159983.1863374715,
+          "gsd": 0.482,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.5421065835828103,
+          "pixelSizeY": -0.5421065835828103
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17033991.75335153,
+          "crsOriginY": -3159983.1863374715,
+          "gsd": 0.482,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.5421065835828103,
+          "pixelSizeY": -0.5421065835828103
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17033991.75335153,
+          "crsOriginY": -3159983.1863374715,
+          "gsd": 0.482,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.5421065835828103,
+          "pixelSizeY": -0.5421065835828103
+        }
+      ],
+      "cloudCover": 1.0,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-02-02 00:13:24",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.1930164,
+                -27.4216008
+              ],
+              [
+                153.0195342,
+                -27.4193853
+              ],
+              [
+                153.0197679,
+                -27.2922083
+              ],
+              [
+                153.1928859,
+                -27.2934676
+              ],
+              [
+                153.1930164,
+                -27.4216008
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 9.9,
+      "provider": "gbdx",
+      "satellite": "WV02",
+      "satelliteAzimuth": 288.2,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7LQniKB-tEOxD-A1h1hqZNufDHmyXTyJgncK4FqguOXTlZ00X",
+      "sunAzimuth": 73.1,
+      "sunElevation": 63.1
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.51,
+          "bitDepth": 16,
+          "crsOriginX": 17028717.59839985,
+          "crsOriginY": -3163346.4155820194,
+          "gsd": 0.517,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5790683960998201,
+          "pixelSizeY": -0.5790683960998201
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.51,
+          "bitDepth": 16,
+          "crsOriginX": 17028717.59839985,
+          "crsOriginY": -3163346.4155820194,
+          "gsd": 0.517,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5790683960998201,
+          "pixelSizeY": -0.5790683960998201
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.51,
+          "bitDepth": 16,
+          "crsOriginX": 17028717.59839985,
+          "crsOriginY": -3163346.4155820194,
+          "gsd": 0.517,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5790683960998201,
+          "pixelSizeY": -0.5790683960998201
+        },
+        {
+          "approximateResolutionX": 0.51,
+          "approximateResolutionY": 0.51,
+          "bitDepth": 16,
+          "crsOriginX": 17028717.59839985,
+          "crsOriginY": -3163346.4155820194,
+          "gsd": 0.517,
+          "names": [
+            "NIR",
+            "near-ir"
+          ],
+          "pixelSizeX": 0.5790683960998201,
+          "pixelSizeY": -0.5790683960998201
+        }
+      ],
+      "cloudCover": 0.47,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-01-27 23:50:54",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                152.9716657,
+                -27.3189789
+              ],
+              [
+                153.1484196,
+                -27.322524
+              ],
+              [
+                153.1481605,
+                -27.4657234
+              ],
+              [
+                152.9721731,
+                -27.4616178
+              ],
+              [
+                152.9716657,
+                -27.3189789
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 18.4,
+      "provider": "gbdx",
+      "satellite": "GE01",
+      "satelliteAzimuth": 101.7,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7d2JzRayCb2ydcz95LUZa_bObfPVJJ1qilatvHEvnq6GLcRjp",
+      "sunAzimuth": 80.2,
+      "sunElevation": 58.9
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.35,
+          "approximateResolutionY": 0.35,
+          "bitDepth": 16,
+          "crsOriginX": 17039418.782359775,
+          "crsOriginY": -3167015.3929397077,
+          "gsd": 0.349,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.3919847604368013,
+          "pixelSizeY": -0.3919847604368013
+        },
+        {
+          "approximateResolutionX": 0.35,
+          "approximateResolutionY": 0.35,
+          "bitDepth": 16,
+          "crsOriginX": 17039418.782359775,
+          "crsOriginY": -3167015.3929397077,
+          "gsd": 0.349,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.3919847604368013,
+          "pixelSizeY": -0.3919847604368013
+        },
+        {
+          "approximateResolutionX": 0.35,
+          "approximateResolutionY": 0.35,
+          "bitDepth": 16,
+          "crsOriginX": 17039418.782359775,
+          "crsOriginY": -3167015.3929397077,
+          "gsd": 0.349,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.3919847604368013,
+          "pixelSizeY": -0.3919847604368013
+        },
+        {
+          "approximateResolutionX": 0.35,
+          "approximateResolutionY": 0.35,
+          "bitDepth": 16,
+          "crsOriginX": 17039418.782359775,
+          "crsOriginY": -3167015.3929397077,
+          "gsd": 0.349,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.3919847604368013,
+          "pixelSizeY": -0.3919847604368013
+        },
+        {
+          "approximateResolutionX": 0.35,
+          "approximateResolutionY": 0.35,
+          "bitDepth": 16,
+          "crsOriginX": 17039418.782359775,
+          "crsOriginY": -3167015.3929397077,
+          "gsd": 0.349,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.3919847604368013,
+          "pixelSizeY": -0.3919847604368013
+        },
+        {
+          "approximateResolutionX": 0.35,
+          "approximateResolutionY": 0.35,
+          "bitDepth": 16,
+          "crsOriginX": 17039418.782359775,
+          "crsOriginY": -3167015.3929397077,
+          "gsd": 0.349,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.3919847604368013,
+          "pixelSizeY": -0.3919847604368013
+        },
+        {
+          "approximateResolutionX": 0.35,
+          "approximateResolutionY": 0.35,
+          "bitDepth": 16,
+          "crsOriginX": 17039418.782359775,
+          "crsOriginY": -3167015.3929397077,
+          "gsd": 0.349,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.3919847604368013,
+          "pixelSizeY": -0.3919847604368013
+        },
+        {
+          "approximateResolutionX": 0.35,
+          "approximateResolutionY": 0.35,
+          "bitDepth": 16,
+          "crsOriginX": 17039418.782359775,
+          "crsOriginY": -3167015.3929397077,
+          "gsd": 0.349,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.3919847604368013,
+          "pixelSizeY": -0.3919847604368013
+        }
+      ],
+      "cloudCover": 0.12,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-01-26 00:13:44",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.2235163,
+                -27.4703176
+              ],
+              [
+                153.0683007,
+                -27.4650661
+              ],
+              [
+                153.0682682,
+                -27.348345
+              ],
+              [
+                153.2235671,
+                -27.355699
+              ],
+              [
+                153.2235163,
+                -27.4703176
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 20.6,
+      "provider": "gbdx",
+      "satellite": "WV03_VNIR",
+      "satelliteAzimuth": 108.9,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7eYe7g6BPTwz-7ZKDZogDiQPZ-jLJOR2idvdjTy5CtTod0-D5",
+      "sunAzimuth": 76.5,
+      "sunElevation": 64.2
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036972.79745465,
+          "crsOriginY": -3168544.1335054114,
+          "gsd": 0.481,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036972.79745465,
+          "crsOriginY": -3168544.1335054114,
+          "gsd": 0.481,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036972.79745465,
+          "crsOriginY": -3168544.1335054114,
+          "gsd": 0.481,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036972.79745465,
+          "crsOriginY": -3168544.1335054114,
+          "gsd": 0.481,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036972.79745465,
+          "crsOriginY": -3168544.1335054114,
+          "gsd": 0.481,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036972.79745465,
+          "crsOriginY": -3168544.1335054114,
+          "gsd": 0.481,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036972.79745465,
+          "crsOriginY": -3168544.1335054114,
+          "gsd": 0.481,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17036972.79745465,
+          "crsOriginY": -3168544.1335054114,
+          "gsd": 0.481,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        }
+      ],
+      "cloudCover": 0.14,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2018-01-06 00:05:30",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.0461859,
+                -27.36337
+              ],
+              [
+                153.2169997,
+                -27.3607843
+              ],
+              [
+                153.2171161,
+                -27.4884145
+              ],
+              [
+                153.0460352,
+                -27.4910376
+              ],
+              [
+                153.0461859,
+                -27.36337
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 9.8,
+      "provider": "gbdx",
+      "satellite": "WV02",
+      "satelliteAzimuth": 31.8,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7K94UwP5seXYpguDtBQMYUwG_MkLwPC1mJ3la8xNZcAiDmGmH",
+      "sunAzimuth": 84.9,
+      "sunElevation": 65.2
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17030399.213022124,
+          "crsOriginY": -3167321.1410528487,
+          "gsd": 0.479,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17030399.213022124,
+          "crsOriginY": -3167321.1410528487,
+          "gsd": 0.479,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17030399.213022124,
+          "crsOriginY": -3167321.1410528487,
+          "gsd": 0.479,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17030399.213022124,
+          "crsOriginY": -3167321.1410528487,
+          "gsd": 0.479,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17030399.213022124,
+          "crsOriginY": -3167321.1410528487,
+          "gsd": 0.479,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17030399.213022124,
+          "crsOriginY": -3167321.1410528487,
+          "gsd": 0.479,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17030399.213022124,
+          "crsOriginY": -3167321.1410528487,
+          "gsd": 0.479,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        },
+        {
+          "approximateResolutionX": 0.48,
+          "approximateResolutionY": 0.48,
+          "bitDepth": 16,
+          "crsOriginX": 17030399.213022124,
+          "crsOriginY": -3167321.1410528487,
+          "gsd": 0.479,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.5382889315857483,
+          "pixelSizeY": -0.5382889315857483
+        }
+      ],
+      "cloudCover": 0.43,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2017-11-26 00:12:26",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.1590301,
+                -27.4535291
+              ],
+              [
+                152.9869119,
+                -27.4529793
+              ],
+              [
+                152.9870841,
+                -27.3508418
+              ],
+              [
+                153.1589067,
+                -27.3512573
+              ],
+              [
+                153.1590301,
+                -27.4535291
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 8.7,
+      "provider": "gbdx",
+      "satellite": "WV02",
+      "satelliteAzimuth": 276.2,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7d2OL6p1h2tTVyH-WBPdkWm1qRkigqYJXUZ_OTy9W25PhfPhC",
+      "sunAzimuth": 75.9,
+      "sunElevation": 70.2
+    },
+    {
+      "bands": [
+        {
+          "approximateResolutionX": 0.31,
+          "approximateResolutionY": 0.31,
+          "bitDepth": 16,
+          "crsOriginX": 17033609.568210103,
+          "crsOriginY": -3169155.629731693,
+          "gsd": 0.315,
+          "names": [
+            "Coastal",
+            "coastal",
+            "aerosol"
+          ],
+          "pixelSizeX": 0.35387513094989004,
+          "pixelSizeY": -0.35387513094989004
+        },
+        {
+          "approximateResolutionX": 0.31,
+          "approximateResolutionY": 0.31,
+          "bitDepth": 16,
+          "crsOriginX": 17033609.568210103,
+          "crsOriginY": -3169155.629731693,
+          "gsd": 0.315,
+          "names": [
+            "Blue",
+            "blue",
+            "b"
+          ],
+          "pixelSizeX": 0.35387513094989004,
+          "pixelSizeY": -0.35387513094989004
+        },
+        {
+          "approximateResolutionX": 0.31,
+          "approximateResolutionY": 0.31,
+          "bitDepth": 16,
+          "crsOriginX": 17033609.568210103,
+          "crsOriginY": -3169155.629731693,
+          "gsd": 0.315,
+          "names": [
+            "Green",
+            "green",
+            "g"
+          ],
+          "pixelSizeX": 0.35387513094989004,
+          "pixelSizeY": -0.35387513094989004
+        },
+        {
+          "approximateResolutionX": 0.31,
+          "approximateResolutionY": 0.31,
+          "bitDepth": 16,
+          "crsOriginX": 17033609.568210103,
+          "crsOriginY": -3169155.629731693,
+          "gsd": 0.315,
+          "names": [
+            "Yellow",
+            "yellow",
+            "y"
+          ],
+          "pixelSizeX": 0.35387513094989004,
+          "pixelSizeY": -0.35387513094989004
+        },
+        {
+          "approximateResolutionX": 0.31,
+          "approximateResolutionY": 0.31,
+          "bitDepth": 16,
+          "crsOriginX": 17033609.568210103,
+          "crsOriginY": -3169155.629731693,
+          "gsd": 0.315,
+          "names": [
+            "Red",
+            "red",
+            "r"
+          ],
+          "pixelSizeX": 0.35387513094989004,
+          "pixelSizeY": -0.35387513094989004
+        },
+        {
+          "approximateResolutionX": 0.31,
+          "approximateResolutionY": 0.31,
+          "bitDepth": 16,
+          "crsOriginX": 17033609.568210103,
+          "crsOriginY": -3169155.629731693,
+          "gsd": 0.315,
+          "names": [
+            "Red Edge",
+            "red-edge"
+          ],
+          "pixelSizeX": 0.35387513094989004,
+          "pixelSizeY": -0.35387513094989004
+        },
+        {
+          "approximateResolutionX": 0.31,
+          "approximateResolutionY": 0.31,
+          "bitDepth": 16,
+          "crsOriginX": 17033609.568210103,
+          "crsOriginY": -3169155.629731693,
+          "gsd": 0.315,
+          "names": [
+            "Near-IR1",
+            "near-ir1"
+          ],
+          "pixelSizeX": 0.35387513094989004,
+          "pixelSizeY": -0.35387513094989004
+        },
+        {
+          "approximateResolutionX": 0.31,
+          "approximateResolutionY": 0.31,
+          "bitDepth": 16,
+          "crsOriginX": 17033609.568210103,
+          "crsOriginY": -3169155.629731693,
+          "gsd": 0.315,
+          "names": [
+            "Near-IR2",
+            "near-ir2"
+          ],
+          "pixelSizeX": 0.35387513094989004,
+          "pixelSizeY": -0.35387513094989004
+        }
+      ],
+      "cloudCover": 0.51,
+      "crsEpsg": 3857,
+      "dataset": "idaho-pansharpened",
+      "datetime": "2017-11-25 00:21:28",
+      "footprint": {
+        "coordinates": [
+          [
+            [
+              [
+                153.0157242,
+                -27.3660166
+              ],
+              [
+                153.1513915,
+                -27.3652801
+              ],
+              [
+                153.1513779,
+                -27.4516381
+              ],
+              [
+                153.0156822,
+                -27.4523411
+              ],
+              [
+                153.0157242,
+                -27.3660166
+              ]
+            ]
+          ]
+        ],
+        "type": "MultiPolygon"
+      },
+      "offNadir": 5.9,
+      "provider": "gbdx",
+      "satellite": "WV03_VNIR",
+      "satelliteAzimuth": 55.5,
+      "sceneId": "GuoBFqtuBllGqZWHb395VXytBgtnXKV7d2cQ5juPbs2DTY2z1bo4vjxTK_SiK4pZnHTXEBhKb74ffUFI",
+      "sunAzimuth": 72.6,
+      "sunElevation": 72.1
+    }
+  ]
+}

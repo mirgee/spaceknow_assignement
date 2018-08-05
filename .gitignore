@@ -1,6 +1,3 @@
 # IDE session, python bytecode, etc.
 __pycache__
 .idea
-
-# Intended for unit tests - not implemented yet
-json/templates

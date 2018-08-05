@@ -1,0 +1,26 @@
+{
+  "mapId": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtYXBJZCI6Ikd1b0JGcXR1QmxsR3FaV0hiMzk1Vlh5dEJndG5YS1Y3ZHpOY0hKSnRYeG1Dci04elBCR1JFWTlWMjRBRFY0Q3NDLWl3OGRSSUstN0ZTQTg4IiwibWFwVHlwZSI6ImNhcnMiLCJnZW9tZXRyeUlkIjoiMzY5ZWNhZmNlOCIsInZlcnNpb24iOiIxMjgiLCJleHAiOjE1NjUwMDMxOTMsInRpbGVzIjpbeyJ4Ijo2MDY0MCwieSI6Mzc5NTUsInpvb20iOjE2fSx7IngiOjYwNjM5LCJ5IjozNzk1NSwiem9vbSI6MTZ9LHsieCI6NjA2MzksInkiOjM3OTU2LCJ6b29tIjoxNn0seyJ4Ijo2MDY0MCwieSI6Mzc5NTYsInpvb20iOjE2fV19.j2Ar7MzPLxklcpqofhksMpZpwv1FVDr1jtLT29Er82k",
+  "maxZoom": 19,
+  "tiles": [
+    [
+      16,
+      60640,
+      37955
+    ],
+    [
+      16,
+      60639,
+      37955
+    ],
+    [
+      16,
+      60639,
+      37956
+    ],
+    [
+      16,
+      60640,
+      37956
+    ]
+  ]
+}
