@@ -7,15 +7,15 @@ a given class, and visualize the result in raster graphics format.
 
 Tested on Python 3.6.5. The following PyPI packages are required in order to run the script:
 
-* Pillow
-* Requests
+* Pillow - image processing library
+* Requests - very convenient HTTP library
 * Nose - optional, for running unit tests in PyCharm
 
 You can either install them into your environment manually, or via 
 ```
 pip3 install -r requirements.txt
 ```
-If you use conda
+If you prefer using conda,
 ```
 conda install --yes --file requirements.txt
 ```
@@ -44,6 +44,8 @@ At the moment, the following optional arguments are supported:
 
 The resulting images can be found in `./img/`, and the number of detected instances over the period is printed out in 
 the console.
+
+Only eligible scenes, i.e. with cloud coverage under 0.05 and GSD under 0.55 are analyzed.
 
 Be patient! Based on the age of oldest scene analyzed, selected area, extent size and other factors, execution may 
 take 5-20 minutes.

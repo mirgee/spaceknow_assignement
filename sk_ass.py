@@ -151,7 +151,7 @@ def collect_tiles(extent, auth_token, scene_id, map_type):
     :param str auth_token: JWT authorization token.
     :param str scene_id: Hash identifying the scene to get tiles for.
     :param str map_type: Type of the desired map, e.g. 'cars', 'aircraft', 'cows', etc.
-    :return requests.Response: Response object containing a list of items with `mapId` and `tiles` fields.
+    :return list: List of items with `mapId` and `tiles` fields.
 
     :raises exceptions.InitiateException: Raised if pipeline initialization fails.
     :raises exceptions.FatalException: Raised if pipeline processing times out.
@@ -338,7 +338,8 @@ def run(map_type, input_file):
 if __name__ == '__main__':
     avail_input_files = [
         "./json/inputs/brisbane_airport_staff_parking_lot.geojson",
-        "./json/inputs/brisbane_alpha_airport_parking.geojson",  # not many cars here
+        "./json/inputs/brisbane_andrews_airport_parking.geojson",  # requires GSD under 0.404
+        "./json/inputs/brisbane_alpha_airport_parking.geojson",  # requires GSD under 0.404, not many cars here
     ]
 
     supported_map_types = [
@@ -359,10 +360,10 @@ if __name__ == '__main__':
                         help="turns debugging mode on - debugging messages and traffic are printed out"
                              " (default: off")
 
-    parser.add_argument("-d", default=config.DAYS_BACK, dest="days_back",
+    parser.add_argument("-d", default=config.DAYS_BACK, dest="days_back", type=int,
                         help="age of the oldest analyzed imagery in days (default: {})".format(config.DAYS_BACK))
 
-    parser.add_argument("-s", default=config.GSD_LIMIT, dest="gsd_limit",
+    parser.add_argument("-s", default=config.GSD_LIMIT, dest="gsd_limit", type=float,
                         help="maximum allowable ground sample distance (GSD) (default: {})".format(config.GSD_LIMIT))
 
     args = parser.parse_args()
@@ -370,6 +371,7 @@ if __name__ == '__main__':
     config.DEBUG = args.debug
     config.DAYS_BACK = args.days_back
     config.GSD_LIMIT = args.gsd_limit
+    assert(0.0 <= config.GSD_LIMIT <= 1.0), "Value of -s parameter must be a float in range [0.0, 1.0]"
 
     run(args.map_type, args.input_file)
 
